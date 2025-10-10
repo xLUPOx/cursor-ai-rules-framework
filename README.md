@@ -33,6 +33,7 @@ This framework enforces a rigorous workflow of reconnaissance, planning, safe ex
 | Directive | Purpose |
 |-----------|---------|
 | **`05 - concise.md`** | Radically concise, information-dense communication |
+| **`06 - no-absolute-right.md`** | Professional communication guidelines, avoiding sycophantic language |
 
 ## 📁 Framework Components
 
