@@ -22,18 +22,22 @@ This framework enforces a rigorous workflow of reconnaissance, planning, safe ex
 
 ### 2. Use the Operational Playbooks
 
-| Playbook | Purpose | When to Use |
-|----------|---------|-------------|
-| **`02 - request.md`** | Standard Operating Procedure | Building features, refactoring, making planned changes |
-| **`03 - refresh.md`** | Root Cause Analysis | When bugs persist and simpler attempts failed |
-| **`04 - retro.md`** | Self-Improvement Loop | End of session to capture learnings |
+**These are chat prompts - copy and paste into chat to initiate tasks:**
+
+| Playbook | Purpose | How to Use |
+|----------|---------|------------|
+| **`02 - request.md`** | Standard Operating Procedure | Copy full content, replace placeholder with your goal, paste in chat |
+| **`03 - refresh.md`** | Root Cause Analysis | Use when bugs persist and simpler attempts failed |
+| **`04 - retro.md`** | Self-Improvement Loop | Use at end of session to capture learnings and improve the framework |
 
 ### 3. Apply Optional Directives
 
-| Directive | Purpose |
-|-----------|---------|
-| **`05 - concise.md`** | Radically concise, information-dense communication |
-| **`06 - no-absolute-right.md`** | Professional communication guidelines, avoiding sycophantic language |
+**These are user rules - install in Cursor settings or append to playbooks:**
+
+| Directive | Type | Function | How to Use |
+|-----------|------|----------|------------|
+| **`05 - concise.md`** | User Rule | Radically concise communication | Install as global rule or append to playbooks |
+| **`06 - no-absolute-right.md`** | User Rule | Professional communication guidelines | Install as global rule to avoid sycophantic language |
 
 ## 📁 Framework Components
 
@@ -46,13 +50,35 @@ This framework enforces a rigorous workflow of reconnaissance, planning, safe ex
 
 ### Specialized Rules
 
-- **`07 - notebook-management.md`** - Jupyter notebook protocols
-- **`08 - notebook-testing.md`** - Notebook testing patterns
-- **`09 - notebook-analytics.md`** - Analytics workflows
-- **`10 - pinescript-management.md`** - Pine Script development
-- **`11 - pinescript-advanced.md`** - Advanced Pine Script patterns
+**These are user rules - install in Cursor settings for specific domains:**
+
+| Rule File | Type | Function | When to Use |
+|-----------|------|----------|-------------|
+| **`07 - notebook-management.md`** | User Rule | Jupyter notebook protocols | When working with Jupyter notebooks |
+| **`08 - notebook-testing.md`** | User Rule | Notebook testing patterns | For notebook testing workflows |
+| **`09 - notebook-analytics.md`** | User Rule | Analytics workflows | For data analysis projects |
+| **`10 - pinescript-management.md`** | User Rule | Pine Script development | When developing TradingView indicators |
+| **`11 - pinescript-advanced.md`** | User Rule | Advanced Pine Script patterns | For complex Pine Script implementations |
+| **`commits.mdc`** | User Rule | Commit message guidelines | Automatically applied when generating commits |
 
 ## 🔧 How to Use
+
+### Installation Types
+
+**1. Core Doctrine (Required):**
+- Install `01 - core.md` as a global rule in Cursor
+- This provides the foundational operational principles
+
+**2. Chat Playbooks (Copy & Paste):**
+- `02 - request.md` - For standard development tasks
+- `03 - refresh.md` - For debugging persistent issues  
+- `04 - retro.md` - For session reflection and improvement
+
+**3. User Rules (Install in Cursor Settings):**
+- `05 - concise.md` - For concise communication
+- `06 - no-absolute-right.md` - For professional communication
+- `07-11` - Domain-specific rules (notebooks, Pine Script, etc.)
+- `commits.mdc` - For commit message formatting
 
 ### Typical Session Workflow
 
