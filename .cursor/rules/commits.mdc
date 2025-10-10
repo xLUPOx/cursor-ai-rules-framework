@@ -1,0 +1,23 @@
+---
+description: Rule to be applied when a commit message is generated
+alwaysApply: false
+---
+
+# Commit Message Rules
+
+- **ALWAYS** follow the conventional commits pattern: `type(scope): description`
+- Use one of these commit types:
+  - `feat`: new feature
+  - `fix`: bug fix
+  - `docs`: documentation changes
+  - `style`: formatting, missing semicolons, etc.
+  - `refactor`: code restructuring without changing functionality
+  - `test`: adding or updating tests
+  - `chore`: maintenance tasks, dependency updates
+- Use present tense and imperative mood ("add" not "added" or "adds")
+- Don't capitalize the first letter of the description
+- No period at the end of the description
+- Examples:
+  - `feat(auth): add user login functionality`
+  - `fix(cart): resolve quantity update bug`
+  - `docs(readme): update installation instructions`
