@@ -15,8 +15,20 @@ Your approach must be systematic, evidence-based, and relentlessly focused on id
 -   **Directive:** Adhering to the **Operational Doctrine**, perform a non-destructive scan of the repository, runtime environment, configurations, and recent logs. Your objective is to establish a high-fidelity, evidence-based baseline of the system's current state as it relates to the anomaly.
 -   **Output:** Produce a concise digest (≤ 200 lines) of your findings.
 -   **Constraint:** **No mutations are permitted during this phase.**
--   **Large Dataset Processing Mandate:** If dataset >100 items, calculate total scope, estimate batch requirements, and request user confirmation for batch processing before proceeding.
+-   **MANDATORY Dataset Size Assessment Protocol:** 
+    - **Step 1:** Calculate exact input dataset size (file count + total file sizes)
+    - **Step 2:** Estimate output file size based on input complexity and processing type
+    - **Step 3:** Determine if batch processing is needed based on:
+      - Input files >100 items OR
+      - Total input size >10MB OR  
+      - Estimated output >5MB OR
+      - Complex processing operations (regex, parsing, analysis)
+    - **Step 4:** If batch processing needed, calculate optimal batch sizes based on token limits
+    - **Step 5:** Request explicit user confirmation for batch processing before proceeding
+    - **Step 6:** Never truncate results when user demands maximum precision
+    - **Step 7:** Report batch completion and request continuation ("continua", "vai")
 -   **User Requirement Priority Protocol:** When user demands "massima precisione" and "file per file riga per riga", suspend conciseness and prioritize thoroughness. User corrections require complete approach restart from corrected perspective. "più a fondo possibile" means systematic analysis, not approximations. Treat user feedback as absolute requirements, not suggestions. When user requests deeper analysis, conduct comprehensive examination rather than surface-level review.
+-   **Code-First Analysis Protocol:** Prioritize actual implementation analysis over documentation assumptions. Base all technical conclusions on actual code examination rather than theoretical analysis. Verify all claims against actual source code implementation.
 -   **Error Pattern Systematic Recognition:** Systematically identify duplicate constants and function definitions across similar file types. Prevent recursive function calls that cause infinite loops. Ensure proper namespace usage (e.g., `ta.` prefix for Pine Script functions). Replace unsupported functions with compatible alternatives. Apply systematic fixes to all occurrences of identified error patterns. Verify fixes across all similar files to prevent pattern repetition.
 -   **Progress Communication Excellence:** Communicate clear batch progress with exact file counts and completion status. Always request explicit permission ("continua", "vai") before proceeding to next batch. Maintain precise TODO tracking with correct completion percentages. Use clear status markers (✅ completed, ⚠️ corrected, 🚧 in progress) for progress communication. Report exact results (perfect files + corrected files) for each batch.
 -   **MCP Server Integration Excellence:** Query ALL available MCP servers for comprehensive knowledge synthesis before implementation. Apply MCP server knowledge to specific domains (Pine Script, trading, clean code). Cross-reference findings across multiple MCP servers for accuracy. Combine insights from different MCP servers for comprehensive solutions. Use MCP-provided templates and best practices as starting points. Leverage MCP servers for Pine Script syntax validation and best practices. Use MCP servers for institutional trading patterns and methodology. Apply MCP server knowledge for code organization and maintainability.
@@ -24,6 +36,7 @@ Your approach must be systematic, evidence-based, and relentlessly focused on id
 -   **CRITICAL VERIFICATION MANDATE:** **NEVER assume file existence without explicit verification. Check each individual file before documenting its presence.**
 -   **MCP Server Diagnostic Integration:** Leverage MCP servers to gather technology-specific diagnostic patterns, common issue resolutions, and best practices that can inform your analysis of the anomaly. Use MCP server knowledge to identify potential root causes and diagnostic approaches.
 -   **MCP Server Exhaustive Search Protocol:** Query ALL available MCP servers for comprehensive diagnostic coverage. Different servers offer different perspectives (syntax validation, implementation patterns, domain expertise). Combine insights from multiple servers for comprehensive root cause analysis.
+-   **MCP Server User Correction Protocol:** When users correct MCP server consultation approach, treat as absolute requirement for immediate verification. Conduct exhaustive verification of all available MCP servers even when initial searches return limited results. User corrections about MCP server usage require complete approach restart from corrected perspective.
 -   **Web Search Integration Protocol:** When MCP servers don't provide specific technical solutions, use web search as a fallback to find language/framework-specific built-in functions, advanced features, and diagnostic patterns. This ensures comprehensive knowledge gathering before root cause analysis.
 -   **Pine Script Diagnostic Protocol:** Reference `@10 - pinescript-management.md` and `@11 - pinescript-advanced.md` for diagnostic patterns
 -   **Notebook Diagnostic Protocol:** Reference `@07 - notebook-management.md`, `@08 - notebook-testing.md`, and `@09 - notebook-analytics.md` for specialized debugging patterns

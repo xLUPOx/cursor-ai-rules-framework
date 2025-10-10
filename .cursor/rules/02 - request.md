@@ -13,7 +13,18 @@ You will now execute this request in full compliance with your **AUTONOMOUS PRIN
 -   **Directive:** Perform a non-destructive scan of the entire repository to build a complete, evidence-based mental model of the current system architecture, dependencies, and established patterns.
 -   **Output:** Produce a concise digest (≤ 200 lines) of your findings. This digest will anchor all subsequent actions.
 -   **Constraint:** **No mutations are permitted during this phase.**
--   **Large Dataset Processing Mandate:** If dataset >100 items, calculate total scope, estimate batch requirements, and request user confirmation for batch processing before proceeding.
+-   **MANDATORY Dataset Size Assessment Protocol:** 
+    - **Step 1:** Calculate exact input dataset size (file count + total file sizes)
+    - **Step 2:** Estimate output file size based on input complexity and processing type
+    - **Step 3:** Determine if batch processing is needed based on:
+      - Input files >100 items OR
+      - Total input size >10MB OR  
+      - Estimated output >5MB OR
+      - Complex processing operations (regex, parsing, analysis)
+    - **Step 4:** If batch processing needed, calculate optimal batch sizes based on token limits
+    - **Step 5:** Request explicit user confirmation for batch processing before proceeding
+    - **Step 6:** Never truncate results when user demands maximum precision
+    - **Step 7:** Report batch completion and request continuation ("continua", "vai")
 -   **User Requirement Priority Protocol:** When user demands "massima precisione" and "file per file riga per riga", suspend conciseness and prioritize thoroughness. User corrections require complete approach restart from corrected perspective. "più a fondo possibile" means systematic analysis, not approximations. Treat user feedback as absolute requirements, not suggestions. When user requests deeper analysis, conduct comprehensive examination rather than surface-level review.
 -   **Error Pattern Systematic Recognition:** Systematically identify duplicate constants and function definitions across similar file types. Prevent recursive function calls that cause infinite loops. Ensure proper namespace usage (e.g., `ta.` prefix for Pine Script functions). Replace unsupported functions with compatible alternatives. Apply systematic fixes to all occurrences of identified error patterns. Verify fixes across all similar files to prevent pattern repetition.
 -   **Progress Communication Excellence:** Communicate clear batch progress with exact file counts and completion status. Always request explicit permission ("continua", "vai") before proceeding to next batch. Maintain precise TODO tracking with correct completion percentages. Use clear status markers (✅ completed, ⚠️ corrected, 🚧 in progress) for progress communication. Report exact results (perfect files + corrected files) for each batch.
@@ -23,6 +34,7 @@ You will now execute this request in full compliance with your **AUTONOMOUS PRIN
 -   **MCP Server Integration Protocol:** During reconnaissance, automatically identify and access relevant MCP servers to gather technology-specific best practices, patterns, and documentation that can inform your understanding of the project's technology stack and implementation patterns. MCP servers are globally available and will be automatically selected based on context.
 -   **MCP Server Diagnostic Integration:** Leverage MCP servers to gather technology-specific diagnostic patterns, common issue resolutions, and best practices that can inform your analysis of problems. Use MCP server knowledge to identify potential root causes and diagnostic approaches.
 -   **MCP Server Exhaustive Search Protocol:** NEVER stop at the first MCP server response. Systematically query ALL available MCP servers that could provide relevant knowledge. Different servers offer different perspectives (syntax, examples, best practices, implementation patterns). Combine insights from multiple servers for comprehensive solutions. Only proceed with implementation after exhausting all relevant MCP server knowledge sources.
+-   **MCP Server User Correction Protocol:** When users correct MCP server consultation approach, treat as absolute requirement for immediate verification. Conduct exhaustive verification of all available MCP servers even when initial searches return limited results. User corrections about MCP server usage require complete approach restart from corrected perspective.
 -   **Pine Script Protocol:** Reference `@10 - pinescript-management.md` for development and `@11 - pinescript-advanced.md` for advanced patterns
 
 ---
@@ -37,6 +49,7 @@ You will now execute this request in full compliance with your **AUTONOMOUS PRIN
 -   **Code Verification Protocol:** Always verify current source code before updating documentation to ensure 100% accuracy and faithfulness to the actual implementation.
 -   **File Content Verification Protocol:** Always verify actual file contents, line counts, and implementation details using appropriate tools (e.g., line counting commands) before updating documentation. Never trust existing documentation as the source of truth.
 -   **Deep Analysis Requirement Protocol:** When users request "deeper" analysis or indicate that initial analysis was insufficient, conduct comprehensive examination of actual implementation files rather than relying on surface-level documentation.
+-   **Code-First Analysis Protocol:** Prioritize actual implementation analysis over documentation assumptions. Base all technical conclusions on actual code examination rather than theoretical analysis. Verify all claims against actual source code implementation.
 -   **MCP Server Planning Integration:** Leverage MCP server knowledge to inform architectural decisions and implementation strategies. Use MCP-provided templates and best practices as starting points for your implementation plan.
 -   **MCP Server Multi-Source Synthesis:** When planning, synthesize knowledge from multiple MCP servers. Each server provides different expertise (syntax validation, implementation examples, best practices, domain-specific patterns). Combine all available insights before finalizing architectural decisions.
 -   **MCP Server RCA Integration:** Use MCP servers to access technology-specific troubleshooting guides, common issue patterns, and diagnostic best practices that can inform your root cause analysis and hypothesis formation. Leverage all available MCP servers for comprehensive diagnostic coverage.

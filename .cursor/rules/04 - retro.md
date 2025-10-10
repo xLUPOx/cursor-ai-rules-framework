@@ -59,6 +59,7 @@ Your mission is to conduct a critical retrospective of the entire preceding sess
 - **Pattern Recognition**: Identify systematic errors across communication, learning, and technical domains
 - **Doctrine Integration**: Successfully integrate lessons into operational protocols
 - **Comprehensive Coverage**: Address temporal logic, communication patterns, and learning behaviors
+- **Doctrine File Selection Protocol**: Always modify files `02 - request.md` and `03 - refresh.md` with operational lessons. These are the core operational doctrine files that must be updated with universal principles. File `04 - retro.md` contains the retrospective process itself, not operational lessons.
 
 ### **Systematic Error Prevention**
 - **Root Cause Analysis**: Address fundamental misunderstandings rather than symptoms
