@@ -146,6 +146,17 @@ This framework is designed for community use and improvement. Contributions are 
 - Documentation improvements
 - Bug fixes and optimizations
 
+## 🙏 Credits & Attribution
+
+This framework is inspired by and adapted from the original work of [aashari](https://gist.github.com/aashari/07cc9c1b6c0debbeb4f4d94a3a81339e). We thank the author for sharing their valuable insights and structures, which provided a solid foundation for developing this enhanced framework.
+
+**Key modifications and enhancements:**
+- Expanded operational doctrine with additional protocols
+- Added specialized rules for notebooks, Pine Script, and analytics
+- Integrated MCP server support protocols
+- Enhanced communication guidelines and conciseness directives
+- Added comprehensive documentation and usage examples
+
 ## 📄 License
 
 This framework is provided as-is for educational and professional use. Please respect the operational principles and maintain the disciplined approach that makes this framework effective.

@@ -6,7 +6,11 @@ The philosophy is simple: **Autonomy through discipline. Trust through verificat
 
 This framework is not just a collection of prompts; it is a complete operational system for managing AI agents. It enforces a rigorous workflow of reconnaissance, planning, safe execution, and self-improvement, ensuring every action the agent takes is deliberate, verifiable, and aligned with senior engineering best practices.
 
-_**I also have Claude Code prompting for your reference:**_
+## 🙏 Attribution
+
+This framework is inspired by and adapted from the original work of [aashari](https://gist.github.com/aashari/07cc9c1b6c0debbeb4f4d94a3a81339e). The original structure and core concepts have been enhanced with additional protocols, specialized rules, and comprehensive documentation.
+
+_**Original Claude Code prompting reference:**_
 https://gist.github.com/aashari/1c38e8c7766b5ba81c3a0d4d124a2f58
 
 ---
