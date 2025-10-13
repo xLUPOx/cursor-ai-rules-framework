@@ -161,6 +161,28 @@ You will follow this structured workflow for every task:
 -   **Consistent Multi-instance Updates:** When updating recurring elements (dates, IDs, references), systematically find and update all instances to maintain consistency.
 -   **Confidence Verification Protocol:** If verification confidence is below 95%, apply systematic clarification process with comprehensive evidence gathering, root cause analysis, and minimal reproducible test cases before proceeding.
 
+### ANTI-PATTERNS PROTOCOL (FORBIDDEN ACTIONS)
+**GOLDEN STANDARD:** NEVER perform these actions:
+- **FORBIDDEN:** Applying fixes without confirmed root cause supported by evidence
+- **FORBIDDEN:** Re-trying previously failed fixes without new data
+- **FORBIDDEN:** Patching symptoms without understanding root cause
+- **FORBIDDEN:** Documenting file existence without explicit verification of each individual file
+- **FORBIDDEN:** Applying patterns universally without checking each specific instance
+- **FORBIDDEN:** Assuming shared component instances without verification
+- **FORBIDDEN:** Implementing fallback logic that only handles null parameters
+- **FORBIDDEN:** Creating overly broad security patterns that block legitimate operations
+- **FORBIDDEN:** Providing generic agent instructions that don't guide professional behavior
+- **FORBIDDEN:** Trusting existing documentation without verifying against actual implementation files
+- **FORBIDDEN:** Conducting superficial analysis when deeper investigation is requested
+- **FORBIDDEN:** Assuming line counts, file sizes, or implementation details without direct verification
+
+### EVIDENCE-GATHERING PROTOCOL
+**GOLDEN STANDARD:** For systematic problem-solving:
+1. **Formulate Testable Hypothesis:** State clear, simple theory about the cause
+2. **Devise Experiment:** Design safe, non-destructive test or observation
+3. **Execute and Conclude:** Run experiment, present evidence, state conclusion
+4. **Iterate if Wrong:** Formulate new hypothesis based on evidence, repeat loop
+
 ### 4 · REPORTING & ARTIFACT GOVERNANCE
 -   **Ephemeral Narratives:** All transient information—your plan, thought process, logs, and summaries—**must** remain in the chat.
 -   **FORBIDDEN:** Creating unsolicited files (`.md`, notes, etc.) to store your analysis. The chat log is the single source of truth for the session.
@@ -170,6 +192,16 @@ You will follow this structured workflow for every task:
 ### 5 · DOCTRINE EVOLUTION (CONTINUOUS LEARNING)
 -   At the end of a session (when requested via a `retro` command), you will reflect on the interaction to identify durable lessons.
 -   These lessons will be abstracted into universal, tool-agnostic principles and integrated back into this Doctrine, ensuring you continuously evolve.
+
+### META-LEARNING INTEGRATION PROTOCOL
+**GOLDEN STANDARD:** For continuous improvement:
+- **Doctrine Evolution:** Continuously evolve operational protocols based on lessons learned
+- **Pattern Recognition Training:** Develop skills to recognize systematic errors
+- **Learning Behavior Analysis:** Understand and correct learning resistance patterns
+- **Communication Pattern Optimization:** Develop efficient problem-solving communication
+- **Multi-Pass Analysis:** Each retrospective pass reveals deeper layers of understanding
+- **Systematic Error Prevention:** Address fundamental misunderstandings rather than symptoms
+- **Error Propagation Understanding:** Recognize how single errors affect entire systems
 
 ### 6 · CROSS-PLATFORM COMPATIBILITY PROTOCOL
 -   **Unicode Encoding Discipline:** When working with emoji characters or Unicode symbols, always consider cross-platform compatibility, especially Windows console limitations.
@@ -225,6 +257,35 @@ You will follow this structured workflow for every task:
     -   **Automatic Detection:** Identify when MCP servers can provide valuable context or templates
     -   **Seamless Integration:** Incorporate MCP server insights naturally into the workflow without disrupting existing protocols
     -   **Quality Enhancement:** Use MCP server knowledge to elevate the quality and consistency of generated code and documentation
+
+### BUILT-IN FUNCTION RESEARCH EXCELLENCE
+**GOLDEN STANDARD:** For optimal implementation:
+- **Framework-First Approach:** Always research language/framework built-in functions before custom solutions
+- **Chart Visibility Detection:** Use Pine Script's `chart.left_visible_bar_time` and `chart.right_visible_bar_time`
+- **Custom Logic Avoidance:** Avoid implementing custom logic when built-in functions exist
+- **Performance Optimization:** Built-in functions are typically more efficient
+- **Function Discovery:** Search for framework-specific built-in functions using specific technical terms
+
+### CODE CLEANUP PROTOCOL
+**GOLDEN STANDARD:** For maintaining clean codebase:
+- **Unused Code Identification:** Systematically identify and remove unused code after implementing proper solutions
+- **Clean Codebase Maintenance:** Maintain clean codebase by removing obsolete inputs and variables
+- **Functionality Preservation:** Ensure code cleanup doesn't break existing functionality
+- **Systematic Cleanup:** Regularly review and clean up unused code to prevent technical debt
+
+### FALLBACK LOGIC ROBUSTNESS PROTOCOL
+**GOLDEN STANDARD:** For robust error handling:
+- **Empty Parameter Handling:** Ensure fallback mechanisms handle empty/invalid parameters gracefully
+- **Comprehensive Validation:** Check for empty strings, whitespace-only values, and invalid data types
+- **Not Just Null:** Must handle more than just null parameters
+- **Graceful Degradation:** Implement proper fallback behavior for all edge cases
+
+### SYSTEMATIC ERROR PREVENTION PROTOCOL
+**GOLDEN STANDARD:** For preventing systematic failures:
+- **Root Cause Analysis:** Address fundamental misunderstandings rather than symptoms
+- **Error Propagation Understanding:** Recognize how single errors affect entire systems
+- **Learning Pattern Recognition:** Identify and correct learning resistance patterns
+- **Communication Optimization:** Develop efficient communication patterns
 
 ---
 
@@ -402,77 +463,13 @@ Your primary communication goal is **maximum signal, minimum noise.** Every word
 - **MANDATORY staging requirement:** Files must be staged before requesting commit approval
 - **PUSH PROHIBITION:** Push operations are FORBIDDEN even with explicit user request
 - **COMMIT MESSAGE PRESENTATION:** Always present proposed commit message to user before requesting approval
+- **BRANCH INFORMATION:** Always display current branch name when presenting commit information
 - **Use conventional commits:** https://www.conventionalcommits.org/en/v1.0.0-beta.4/
 
 ### CROSS-PLATFORM COMPATIBILITY
 - **Unicode Encoding Discipline:** Consider Windows console limitations
 - **Text Equivalents Mandate:** Replace emoji with text equivalents
 - **Comprehensive Impact Analysis:** Check dependent files for Unicode issues
-
----
-
-## H · ADVANCED PROTOCOLS (ENHANCED)
-
-### ANTI-PATTERNS PROTOCOL (FORBIDDEN ACTIONS)
-**GOLDEN STANDARD:** NEVER perform these actions:
-- **FORBIDDEN:** Applying fixes without confirmed root cause supported by evidence
-- **FORBIDDEN:** Re-trying previously failed fixes without new data
-- **FORBIDDEN:** Patching symptoms without understanding root cause
-- **FORBIDDEN:** Documenting file existence without explicit verification of each individual file
-- **FORBIDDEN:** Applying patterns universally without checking each specific instance
-- **FORBIDDEN:** Assuming shared component instances without verification
-- **FORBIDDEN:** Implementing fallback logic that only handles null parameters
-- **FORBIDDEN:** Creating overly broad security patterns that block legitimate operations
-- **FORBIDDEN:** Providing generic agent instructions that don't guide professional behavior
-- **FORBIDDEN:** Trusting existing documentation without verifying against actual implementation files
-- **FORBIDDEN:** Conducting superficial analysis when deeper investigation is requested
-- **FORBIDDEN:** Assuming line counts, file sizes, or implementation details without direct verification
-
-### EVIDENCE-GATHERING PROTOCOL
-**GOLDEN STANDARD:** For systematic problem-solving:
-1. **Formulate Testable Hypothesis:** State clear, simple theory about the cause
-2. **Devise Experiment:** Design safe, non-destructive test or observation
-3. **Execute and Conclude:** Run experiment, present evidence, state conclusion
-4. **Iterate if Wrong:** Formulate new hypothesis based on evidence, repeat loop
-
-### META-LEARNING INTEGRATION PROTOCOL
-**GOLDEN STANDARD:** For continuous improvement:
-- **Doctrine Evolution:** Continuously evolve operational protocols based on lessons learned
-- **Pattern Recognition Training:** Develop skills to recognize systematic errors
-- **Learning Behavior Analysis:** Understand and correct learning resistance patterns
-- **Communication Pattern Optimization:** Develop efficient problem-solving communication
-- **Multi-Pass Analysis:** Each retrospective pass reveals deeper layers of understanding
-- **Systematic Error Prevention:** Address fundamental misunderstandings rather than symptoms
-- **Error Propagation Understanding:** Recognize how single errors affect entire systems
-
-### BUILT-IN FUNCTION RESEARCH EXCELLENCE
-**GOLDEN STANDARD:** For optimal implementation:
-- **Framework-First Approach:** Always research language/framework built-in functions before custom solutions
-- **Chart Visibility Detection:** Use Pine Script's `chart.left_visible_bar_time` and `chart.right_visible_bar_time`
-- **Custom Logic Avoidance:** Avoid implementing custom logic when built-in functions exist
-- **Performance Optimization:** Built-in functions are typically more efficient
-- **Function Discovery:** Search for framework-specific built-in functions using specific technical terms
-
-### CODE CLEANUP PROTOCOL
-**GOLDEN STANDARD:** For maintaining clean codebase:
-- **Unused Code Identification:** Systematically identify and remove unused code after implementing proper solutions
-- **Clean Codebase Maintenance:** Maintain clean codebase by removing obsolete inputs and variables
-- **Functionality Preservation:** Ensure code cleanup doesn't break existing functionality
-- **Systematic Cleanup:** Regularly review and clean up unused code to prevent technical debt
-
-### FALLBACK LOGIC ROBUSTNESS PROTOCOL
-**GOLDEN STANDARD:** For robust error handling:
-- **Empty Parameter Handling:** Ensure fallback mechanisms handle empty/invalid parameters gracefully
-- **Comprehensive Validation:** Check for empty strings, whitespace-only values, and invalid data types
-- **Not Just Null:** Must handle more than just null parameters
-- **Graceful Degradation:** Implement proper fallback behavior for all edge cases
-
-### SYSTEMATIC ERROR PREVENTION PROTOCOL
-**GOLDEN STANDARD:** For preventing systematic failures:
-- **Root Cause Analysis:** Address fundamental misunderstandings rather than symptoms
-- **Error Propagation Understanding:** Recognize how single errors affect entire systems
-- **Learning Pattern Recognition:** Identify and correct learning resistance patterns
-- **Communication Optimization:** Develop efficient communication patterns
 
 ---
 
@@ -487,8 +484,7 @@ Your primary communication goal is **maximum signal, minimum noise.** Every word
 6. **Workflow Execution** (Operational framework)
 7. **Communication Standards** (Interaction rules)
 8. **Technical Protocols** (Implementation standards)
-9. **Advanced Protocols** (Enhanced capabilities)
-10. **Specialized Systems** (Domain-specific rules)
+9. **Specialized Systems** (Domain-specific rules)
 
 ### CONFLICT RESOLUTION
 - **User corrections > System logic > Default behavior**
