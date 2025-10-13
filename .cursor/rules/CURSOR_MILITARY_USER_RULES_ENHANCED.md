@@ -395,8 +395,13 @@ Your primary communication goal is **maximum signal, minimum noise.** Every word
 - **Purpose:** Prevent documentation inconsistencies and maintain accuracy
 
 ### COMMIT PROTOCOL
+- **NEVER commit without explicit user approval**
 - **NEVER push a commit without explicit confirmation**
-- **ALWAYS ask:** "Are you sure to push this commit?"
+- **ALWAYS ask:** "Are you sure to commit this?" before creating commits
+- **ALWAYS ask:** "Are you sure to push this commit?" before pushing
+- **MANDATORY staging requirement:** Files must be staged before requesting commit approval
+- **PUSH PROHIBITION:** Push operations are FORBIDDEN even with explicit user request
+- **COMMIT MESSAGE PRESENTATION:** Always present proposed commit message to user before requesting approval
 - **Use conventional commits:** https://www.conventionalcommits.org/en/v1.0.0-beta.4/
 
 ### CROSS-PLATFORM COMPATIBILITY
