@@ -43,50 +43,62 @@ This framework enforces a rigorous workflow of reconnaissance, planning, safe ex
 
 ### Core Files
 
-- **`00 - Cursor AI Prompting Rules.md`** - Main framework documentation
-- **`01 - core.md`** - Core operational doctrine (183 lines)
-- **`02 - request.md`** - Standard operating procedure template
-- **`commits.mdc`** - Commit message guidelines
+- **`GLOBAL-RULES.md`** - Main framework documentation and operational doctrine
+- **`workflow/plan.md`** - Planning phase protocols
+- **`workflow/execute.md`** - Execution phase protocols
 
-### Specialized Rules
+### Specialized Extensions
 
 **These are user rules - install in Cursor settings for specific domains:**
 
-| Rule File | Type | Function | When to Use |
-|-----------|------|----------|-------------|
+| Extension File | Type | Function | When to Use |
+|----------------|------|----------|-------------|
 | **`07 - notebook-management.md`** | User Rule | Jupyter notebook protocols | When working with Jupyter notebooks |
 | **`08 - notebook-testing.md`** | User Rule | Notebook testing patterns | For notebook testing workflows |
 | **`09 - notebook-analytics.md`** | User Rule | Analytics workflows | For data analysis projects |
 | **`10 - pinescript-management.md`** | User Rule | Pine Script development | When developing TradingView indicators |
 | **`11 - pinescript-advanced.md`** | User Rule | Advanced Pine Script patterns | For complex Pine Script implementations |
-| **`commits.mdc`** | User Rule | Commit message guidelines | Automatically applied when generating commits |
+
+### Legacy Files
+
+**Historical versions available in `OLD/` directory:**
+- **`00 - Cursor AI Prompting Rules.md`** - Original framework documentation
+- **`01 - core.md`** - Legacy core operational doctrine
+- **`02 - request.md`** - Legacy standard operating procedure template
+- **`03 - refresh.md`** - Legacy root cause analysis template
+- **`04 - retro.md`** - Legacy self-improvement loop template
+- **`05 - concise.md`** - Legacy concise communication rules
+- **`06 - no-absolute-right.md`** - Legacy professional communication guidelines
+- **`commits.mdc`** - Commit message guidelines
 
 ## 🔧 How to Use
 
 ### Installation Types
 
 **1. Core Doctrine (Required):**
-- Install `01 - core.md` as a global rule in Cursor
-- This provides the foundational operational principles
+- Install `GLOBAL-RULES.md` as a global rule in Cursor
+- This provides the foundational operational principles and all protocols
 
-**2. Chat Playbooks (Copy & Paste):**
-- `02 - request.md` - For standard development tasks
-- `03 - refresh.md` - For debugging persistent issues  
-- `04 - retro.md` - For session reflection and improvement
+**2. Workflow Extensions (Optional):**
+- `workflow/plan.md` - Enhanced planning phase protocols
+- `workflow/execute.md` - Enhanced execution phase protocols
 
-**3. User Rules (Install in Cursor Settings):**
-- `05 - concise.md` - For concise communication
-- `06 - no-absolute-right.md` - For professional communication
+**3. Specialized Extensions (Install in Cursor Settings):**
 - `07-11` - Domain-specific rules (notebooks, Pine Script, etc.)
-- `commits.mdc` - For commit message formatting
+- Install based on your development needs
+
+**4. Legacy Playbooks (Historical):**
+- Available in `OLD/` directory for reference
+- `02 - request.md` - Legacy standard development tasks
+- `03 - refresh.md` - Legacy debugging persistent issues  
+- `04 - retro.md` - Legacy session reflection and improvement
 
 ### Typical Session Workflow
 
-1. **Initiate with a Playbook:**
-   - Copy the full text of the appropriate playbook
-   - Replace the placeholder line with your specific goal
-   - **(Optional)** Append `05 - concise.md` for conciseness
-   - Paste into chat
+1. **Install Core Framework:**
+   - Install `GLOBAL-RULES.md` as a global rule in Cursor
+   - Optionally install specialized extensions from `estensions/` directory
+   - Framework automatically activates all protocols
 
 2. **Observe Disciplined Execution:**
    - Agent announces operational phase (Reconnaissance, Planning, etc.)
@@ -100,9 +112,10 @@ This framework enforces a rigorous workflow of reconnaissance, planning, safe ex
    - All evidence transparently available in chat log
    - Workspace left clean
 
-4. **Close the Loop:**
-   - Use `04 - retro.md` at session end
+4. **Continuous Improvement:**
+   - Framework includes built-in self-improvement protocols
    - Agent analyzes session and proposes Doctrine updates
+   - Continuous learning and evolution
 
 ## 🎯 Status Markers
 
@@ -165,4 +178,4 @@ This framework is provided as-is for educational and professional use. Please re
 
 **Welcome to a more disciplined, reliable, and truly autonomous way of working with AI.**
 
-*Updated: 2025-10-10*
+*Updated: 2025-01-13*
