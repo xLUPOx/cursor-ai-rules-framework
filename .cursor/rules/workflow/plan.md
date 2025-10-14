@@ -1,12 +1,12 @@
 ---
 description: Create and execute task plans with context-aware approach (startup vs corporate)
-globs: ["docs/templates/features/corporate/*.md", "docs/templates/features/startup/*.md"]
+globs: ["docs/templates/corporate/*.md", "docs/templates/startup/*.md"]
 alwaysApply: false
 ---
 
 # Create and Execute Task Plan
 
-**Core Task:** Read from `docs/templates/features/corporate/` or `docs/templates/features/startup/` and generate context-aware task plan at `docs/active/tasks/` with appropriate testing, logging, and safety protocols from `docs/active/features/[feature-name]/`.
+**Goal:** Plan tasks for existing features by reading from `docs/templates/corporate/` or `docs/templates/startup/` and generate context-aware task plan at `docs/active/tasks/` with appropriate testing, logging, and safety protocols from `docs/active/features/[feature-name]/`.
 
 ## Phase 0: Reconnaissance (MANDATORY)
 
@@ -14,27 +14,37 @@ alwaysApply: false
 **MANDATORY:** Before any planning, ask user:
 
 1. **What would you like to work on?**
-   - **Option A:** Create new feature specification
-   - **Option B:** Continue with existing feature
+   - **Option A:** Plan task for existing feature
+   - **Option B:** Continue with existing task plan
    - **Option C:** Review/update existing task plan
 
-2. **Context Detection and Suggestion:**
-   - **Analyze project indicators:**
+2. **Feature Selection (if Option A):**
+   - **Check existing features:** `ls docs/active/features/` - [list existing feature directories]
+   - **If no features found:** "No features found in docs/active/features/. Please create a feature first."
+   - **If features exist:** Present available features to user:
+     - **Available Features:** "Found [X] features: [list feature names]"
+     - **User Choice:** "Which feature do you want to plan tasks for?"
+
+3. **Context Detection and Suggestion:**
+   - **Analyze project indicators for selected feature:**
      - **Startup Indicators:** Small team (< 10), rapid iteration, MVP phase, limited docs, fast delivery
      - **Corporate Indicators:** Large team (> 10), enterprise requirements, comprehensive docs, security/compliance, formal processes
    - **Present detected context to user:**
-     - **Suggested Approach:** "Based on project analysis, I suggest [STARTUP/CORPORATE] approach"
+     - **Suggested Approach:** "Based on project analysis for [FEATURE], I suggest [STARTUP/CORPORATE] approach"
      - **Reasoning:** "Detected indicators: [list specific indicators found]"
-     - **User Choice:** "Do you want to proceed with [STARTUP/CORPORATE] approach?"
+     - **User Choice:** "Do you want to proceed with [STARTUP/CORPORATE] approach for [FEATURE]?"
 
-3. **User Confirmation:**
-   - **MANDATORY:** "You selected [OPTION] with [CONTEXT] approach. Proceed?"
+4. **User Confirmation:**
+   - **MANDATORY:** "You selected [FEATURE] with [CONTEXT] approach. Proceed with task planning?"
    - **MANDATORY:** Wait for explicit user confirmation
    - **MANDATORY:** Only proceed after user approval
 
 ### Date Verification Protocol
 1. **Get timestamp:** `date +"%Y-%m-%d-%H-%M"` to create filename
 2. **Verify current date:** `date +"%A, %Y-%m-%d %H:%M:%S UTC"` for documentation accuracy
+3. **Context-based naming:** Include context in filename
+   - **STARTUP:** `docs/active/tasks/[date]-[feature-name]-startup-task.md`
+   - **CORPORATE:** `docs/active/tasks/[date]-[feature-name]-corporate-task.md`
 
 ### Project Structure Analysis
 1. **Check files:** `ls . docs` to verify project structure
@@ -46,16 +56,16 @@ alwaysApply: false
 **MUST read all relevant files before planning:**
 
 **For CORPORATE context:**
-- `docs/templates/features/corporate/` (Feature templates)
-- `docs/active/features/[feature-name]/` (Feature-specific standards)
-- `docs/standards/corporate/` (Fallback standards if feature-specific not available)
+- `docs/templates/corporate/` (Task templates for structure)
+- `docs/guidelines/corporate/` (General guidelines for context)
+- `docs/active/features/[feature-name]/` (Feature-specific guidelines for context)
 - `README.md`
 - `.gitignore`, `package.json`, `requirements.txt`, etc.
 
 **For STARTUP context:**
-- `docs/templates/features/startup/` (Feature templates)
-- `docs/active/features/[feature-name]/` (Feature-specific standards)
-- `docs/standards/startup/` (Fallback standards if feature-specific not available)
+- `docs/templates/startup/` (Task templates for structure)
+- `docs/guidelines/startup/` (General guidelines for context)
+- `docs/active/features/[feature-name]/` (Feature-specific guidelines for context)
 - `README.md`
 - `.gitignore`, `package.json`, `requirements.txt`, etc.
 
@@ -72,8 +82,8 @@ alwaysApply: false
 - **NO conversation:** No preamble, commentary, or summaries
 - **Missing info:** Use `<!-- TODO: [specify what's missing] -->` in file
 - **Path consistency:** 
-  - **CORPORATE:** Read from `docs/templates/features/corporate/`, write to `docs/active/tasks/`
-  - **STARTUP:** Read from `docs/templates/features/startup/`, write to `docs/active/tasks/`
+  - **CORPORATE:** Read from `docs/templates/corporate/`, write to `docs/active/tasks/[date]-[feature-name]-corporate-task.md`
+  - **STARTUP:** Read from `docs/templates/startup/`, write to `docs/active/tasks/[date]-[feature-name]-startup-task.md`
 
 ## Required for Each Commit
 
@@ -134,7 +144,7 @@ For each commit specify:
 ```markdown
 # Task: [Brief Title]
 
-## Commit 1: [type: description [docs/active/tasks/YYYY-MM-DD-task.md]]
+## Commit 1: [type: description [docs/active/tasks/YYYY-MM-DD-[feature-name]-[context]-task.md]]
 **Description:**
 [Specific details: file paths (/Controllers/UserController.cs), method names (HandleUserLoginAsync), CLI commands (dotnet ef migrations add), usings, NuGet packages, test files (tests/UserControllerTests.cs)]
 
@@ -154,7 +164,7 @@ For each commit specify:
 
 ---
 
-## Commit 2: [type: description [docs/active/tasks/YYYY-MM-DD-task.md]]
+## Commit 2: [type: description [docs/active/tasks/YYYY-MM-DD-[feature-name]-[context]-task.md]]
 [Repeat structure for 2-10 commits total]
 ```
 
@@ -162,7 +172,7 @@ For each commit specify:
 ```markdown
 # Task: [Brief Title]
 
-## Commit 1: [type: description [docs/active/tasks/YYYY-MM-DD-task.md]]
+## Commit 1: [type: description [docs/active/tasks/YYYY-MM-DD-[feature-name]-[context]-task.md]]
 **Description:**
 [What needs to be done - keep it simple]
 
@@ -173,7 +183,7 @@ For each commit specify:
 
 ---
 
-## Commit 2: [type: description [docs/active/tasks/YYYY-MM-DD-task.md]]
+## Commit 2: [type: description [docs/active/tasks/YYYY-MM-DD-[feature-name]-[context]-task.md]]
 [Repeat structure for 2-3 commits total]
 ```
 
@@ -185,7 +195,9 @@ Use: `feat:`, `fix:`, `test:`, `docs:`, `chore:` with conventional commits forma
 2. Provide brief executive summary of planned commits
 3. **MANDATORY:** Request user approval before proceeding
 4. **MANDATORY:** Confirm context approach was correct
-5. Wait for user feedback
+5. **EXPLICIT CALL:** "🚀 Ready to execute? I'll now call execute.md to run your task plan: [date]-[feature-name]-[context]-task.md"
+6. **AUTOMATIC:** Call execute.md with the created task plan
+7. **SEAMLESS:** Continue with execution workflow
 
 ## Commit Execution Protocol (After Plan Creation)
 
@@ -198,11 +210,13 @@ Use: `feat:`, `fix:`, `test:`, `docs:`, `chore:` with conventional commits forma
 ### Pre-Commit Safety Checklist (MANDATORY)
 **BEFORE ANY COMMIT, ALWAYS:**
 1. **STOP** - Never commit immediately
-2. **PRESENT** - Show proposed commit message
-3. **ASK** - "Are you sure to commit this?"
-4. **WAIT** - For explicit user confirmation
-5. **VERIFY** - User approval received
-6. **PROCEED** - Only after approval
+2. **STAGE** - `git add` specific files (MANDATORY)
+3. **SHOW** - Display staged files with `git status`
+4. **PRESENT** - Show proposed commit message
+5. **ASK** - "Are you sure to commit this?"
+6. **WAIT** - For explicit user confirmation
+7. **VERIFY** - User approval received
+8. **PROCEED** - Only after approval
 
 **VIOLATION PREVENTION:**
 - **Pattern Recognition:** If user says "commit", STOP and apply protocol
@@ -210,7 +224,8 @@ Use: `feat:`, `fix:`, `test:`, `docs:`, `chore:` with conventional commits forma
 - **Explicit Confirmation:** Never assume implicit approval
 
 ### Commit Phase (With Safety)
-- **Stage changes:** `git add` with specific files
+- **Stage changes:** `git add` with specific files (MANDATORY before commit request)
+- **Show staged files:** Display exactly what will be committed
 - **User confirmation:** "Are you sure to commit this?"
 - **Commit:** Only after explicit user approval
 - **Verification:** Confirm commit was successful

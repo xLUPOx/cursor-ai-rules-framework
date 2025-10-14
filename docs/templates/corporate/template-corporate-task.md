@@ -28,12 +28,12 @@
 
 ### Information Gathering (MANDATORY)
 **MUST read all relevant files before execution:**
-- [ ] `docs/features/corporate/` (Source feature specification - CORPORATE context)
-- [ ] `docs/corporate/PRD.md` (Product Requirements - CORPORATE context)
-- [ ] `docs/corporate/tech_stack.md` (Tech stack - CORPORATE context)
-- [ ] `docs/corporate/openapi.yaml` (API specs - CORPORATE context)
-- [ ] `docs/corporate/logging.md` (Logging - CORPORATE context)
-- [ ] `docs/corporate/testing_strategy.md` (Testing - CORPORATE context)
+- [ ] `docs/active/features/[feature-name]/` (Source feature specification - CORPORATE context)
+- [ ] `docs/templates/corporate/template-corporate-PRD.md` (Product Requirements - CORPORATE context)
+- [ ] `docs/templates/corporate/template-corporate-tech.md` (Tech stack - CORPORATE context)
+- [ ] `docs/templates/corporate/template-corporate-openapi.yaml` (API specs - CORPORATE context)
+- [ ] `docs/templates/corporate/template-corporate-logging.md` (Logging - CORPORATE context)
+- [ ] `docs/templates/corporate/template-corporate-testing.md` (Testing - CORPORATE context)
 - [ ] `README.md`
 - [ ] `.gitignore`, `package.json`, `requirements.txt`, etc.
 
