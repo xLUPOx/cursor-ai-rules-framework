@@ -6,7 +6,7 @@ alwaysApply: false
 
 # Execute Task Plan
 
-**Goal:** Execute commits from `docs/tasks/corporate/` or `docs/tasks/startup/` with context-aware approach (startup vs corporate) and appropriate safety protocols.
+**Goal:** Execute commits from `docs/active/tasks/` with context-aware approach (startup vs corporate) and appropriate safety protocols from `docs/active/features/[feature-name]/`.
 
 ## Phase 0: Reconnaissance (MANDATORY)
 
@@ -20,11 +20,12 @@ alwaysApply: false
 
 2. **Available Task Directories Analysis:**
    - **Check existing task directories:**
-     - **Corporate tasks:** `ls docs/tasks/corporate/` - [list existing task files]
-     - **Startup tasks:** `ls docs/tasks/startup/` - [list existing task files]
+     - **Active tasks:** `ls docs/active/tasks/` - [list existing task files]
+     - **Active features:** `ls docs/active/features/` - [list feature directories]
+     - **Standards available:** `ls docs/active/features/[feature-name]/` for feature-specific standards
    - **Present available options to user:**
-     - **Corporate Approach:** "Found [X] corporate task files: [list files]"
-     - **Startup Approach:** "Found [Y] startup task files: [list files]"
+     - **Corporate Approach:** "Found [X] task files in docs/active/tasks/ with corporate feature standards"
+     - **Startup Approach:** "Found [Y] task files in docs/active/tasks/ with startup feature standards"
      - **User Choice:** "Which approach do you want to use: CORPORATE or STARTUP?"
 
 3. **User Confirmation:**
@@ -33,12 +34,14 @@ alwaysApply: false
    - **MANDATORY:** Only proceed after user approval
 
 ### Setup & Verification
-1. **Check task file exists in selected directory:**
-   - **If CORPORATE selected:** `ls docs/tasks/corporate/`
-   - **If STARTUP selected:** `ls docs/tasks/startup/`
+1. **Check task file exists in active directory:**
+   - **Active tasks:** `ls docs/active/tasks/`
+   - **Feature standards:** `ls docs/active/features/[feature-name]/`
 2. **If missing:** Stop and notify user immediately
-3. **Read task file from selected directory:** Parse all commits and verification steps
-4. **System-wide impact analysis:** Identify all affected components and dependencies
+3. **Read task file from docs/active/tasks/:** Parse all commits and verification steps
+4. **Read feature-specific standards:** Load appropriate standards from docs/active/features/[feature-name]/ based on context
+5. **Fallback to general standards:** If feature-specific not available, use docs/standards/corporate/ or docs/standards/startup/
+6. **System-wide impact analysis:** Identify all affected components and dependencies
 
 ### Confidence Assessment Protocol
 **CORPORATE context:**
@@ -57,37 +60,41 @@ alwaysApply: false
 
 ### 1. Pre-Execution Safety Check
 **CORPORATE context:**
+- **Apply standards from:** `docs/active/features/[feature-name]/` (feature-specific) or `docs/standards/corporate/` (fallback)
 - **Timeout enforcement:** All commands must have timeout
 - **Non-interactive execution:** Use flags to prevent interactive prompts
 - **Fail-fast semantics:** Scripts should exit immediately on error
 - **Cross-platform compatibility:** Consider Windows console limitations
 
 **STARTUP context:**
+- **Apply standards from:** `docs/active/features/[feature-name]/` (feature-specific) or `docs/standards/startup/` (fallback)
 - **Basic safety:** Essential protection only
 - **Quick execution:** Minimal overhead
 - **Cross-platform compatibility:** Consider Windows console limitations
 
 ### 2. Implement Phase
 **CORPORATE context:**
-- **Execute:** Commit instructions with safety wrappers
+- **Execute:** Commit instructions with safety wrappers from `docs/active/features/[feature-name]/` (feature-specific) or `docs/standards/corporate/` (fallback)
 - **Monitor:** Real-time output and error detection
 - **Timeout:** Maximum 5 minutes per command
 - **Rollback:** Immediate rollback on failure
 
 **STARTUP context:**
-- **Execute:** Commit instructions with basic safety
+- **Execute:** Commit instructions with basic safety from `docs/active/features/[feature-name]/` (feature-specific) or `docs/standards/startup/` (fallback)
 - **Monitor:** Basic output and error detection
 - **Timeout:** Maximum 2 minutes per command
 - **Rollback:** Basic rollback on failure
 
 ### 3. Verification Phase (MANDATORY)
 **CORPORATE context:**
+- **Apply standards from:** `docs/active/features/[feature-name]/` (feature-specific) or `docs/standards/corporate/` (fallback)
 - **Run ALL verification steps** specified for this commit
 - **Automated tests:** Execute with timeout and error handling
 - **Log inspection:** Verify logging output matches expectations
 - **Safety checks:** Validate system integrity
 
 **STARTUP context:**
+- **Apply standards from:** `docs/active/features/[feature-name]/` (feature-specific) or `docs/standards/startup/` (fallback)
 - **Run essential verification steps** specified for this commit
 - **Basic tests:** Execute with basic error handling
 - **Quick checks:** Verify essential functionality

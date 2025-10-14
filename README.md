@@ -8,6 +8,20 @@ A comprehensive, evidence-first prompting framework designed to elevate AI agent
 
 This framework enforces a rigorous workflow of reconnaissance, planning, safe execution, and self-improvement, ensuring every action is deliberate, verifiable, and aligned with senior engineering best practices.
 
+## 📁 Framework Overview
+
+### Core Components
+- **GLOBAL-RULES.md** - Main operational doctrine and protocols
+- **workflow/** - Planning and execution rules for development tasks
+- **docs/** - Context-aware documentation system (corporate vs startup)
+- **estensions/** - Specialized rules for specific domains
+
+### Documentation System
+- **Standards** - General best practices (corporate/startup contexts)
+- **Templates** - Reusable starting points for features and tasks
+- **Active Work** - Current development with feature-specific standards
+- **Workflow Integration** - Automated execution with safety protocols
+
 ## 🚀 Quick Start
 
 ### 1. Install the Core Doctrine
