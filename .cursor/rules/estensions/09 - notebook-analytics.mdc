@@ -1,0 +1,250 @@
+---
+description: Jupyter notebook analytics protocols with comprehensive safety and MCP integration
+globs: ["**/*.ipynb"]
+alwaysApply: false
+---
+
+# Jupyter Notebook Analytics Protocol
+
+**Version:** 2.0
+**Updated:** 2025-01-14
+**Status:** Active
+**Integration:** GLOBAL-RULES.md, MCP Servers
+
+## **Phase 0: Reconnaissance (MANDATORY)**
+
+### Date Verification Protocol
+- **Current date verified:** `date +"%A, %Y-%m-%d %H:%M:%S UTC"`
+- **Timestamp accuracy:** All dates in analytics documentation verified
+
+### Analytics Environment Analysis
+- **Data source assessment:** Analyze data sources and dependencies
+- **Analytics requirements:** Identify analytics needs and objectives
+- **Performance requirements:** Assess computational and memory requirements
+- **System-wide impact analysis:** Identify all affected components and dependencies
+
+### Confidence Assessment Protocol
+**Before proceeding, assess confidence level:**
+- **Confidence ≥ 95%:** Proceed with analytics operations
+- **Confidence < 95%:** Apply systematic clarification process
+- **Evidence gathering:** Comprehensive evidence before proceeding
+- **Multi-source validation:** Cross-reference findings across multiple sources
+- **User confirmation:** Request user confirmation for uncertain decisions
+
+## **Analytics Agent Integration Patterns**
+
+### Agent Toolkit Configuration
+
+- **Instance Verification:** Use `id()` checks to confirm instance identity
+- **Tool Instance Coordination:** Verify agent tools are separate instances requiring explicit configuration
+- **Session Management:** Set user sessions on correct tool instances
+- **Configuration Validation:** Ensure proper agent configuration before use
+
+### User Session Context Management
+
+- **Robust Fallback Logic:** Handle empty/invalid parameters gracefully
+- **Parameter Validation:** Check for empty strings, whitespace, and invalid data types
+- **Session Context:** Implement robust fallback for user session context
+- **Context Validation:** Verify session context before processing requests
+
+### Expert-Level Agent Instructions
+
+- **Professional Behavior:** Provide specific expert protocols for professional behavior
+- **Tool Usage:** Single-tool usage per question for focused analysis
+- **Analytical Depth:** Include response quality standards and conciseness guidelines
+- **Expert Protocols:** Define specific instructions for high-level agent behavior
+
+### Agent Framework Integration
+
+- **Instance Identity:** Use `id()` checks to confirm instance identity
+- **Tool Configuration:** Verify separate instances require explicit configuration
+- **Session Context:** Set user sessions on correct tool instances
+- **Framework Validation:** Ensure proper framework integration
+
+## **Debug-First Development Protocol**
+
+### Systematic Logging Strategies
+
+- **Parameter Flow Tracing:** Use systematic logging to trace parameter flow
+- **Debug Log Placement:** Add debug logs at key decision points
+- **Data Flow Understanding:** Understand data flow through complex systems
+- **Instance Mismatch Detection:** Identify instance mismatches with logging
+
+### Cell Execution Debugging
+
+- **Execution Tracing:** Trace cell execution and variable state
+- **Output Inspection:** Inspect cell outputs for debugging information
+- **State Verification:** Verify kernel state and variable persistence
+- **Error Isolation:** Isolate errors to specific cells or operations
+
+### Debug-First Notebook Testing
+
+- **Systematic Logging:** Use logging to trace parameter flow through systems
+- **Decision Point Logging:** Add debug logs at key decision points
+- **Data Flow Analysis:** Understand data flow and identify mismatches
+- **Instance Verification:** Use `id()` checks to confirm instance identity
+
+### Output Inspection Techniques
+
+- **Cell Output Analysis:** Inspect cell outputs for debugging information
+- **Variable State Inspection:** Check variable values and types
+- **Execution State Verification:** Verify execution state and history
+- **Error Pattern Recognition:** Identify common error patterns in outputs
+
+## **Data Analysis Best Practices**
+
+### DataFrame Operations
+
+- **Datetime Handling:** Use `pd.to_datetime()` before applying `.dt` accessor
+- **Data Type Validation:** Ensure proper data types for operations
+- **Memory Management:** Handle large datasets efficiently
+- **Operation Optimization:** Use efficient pandas operations
+
+### Visualization in Notebooks
+
+- **Plot Management:** Handle plot outputs and display
+- **Memory Optimization:** Manage memory usage for large visualizations
+- **Output Control:** Control plot display and saving
+- **Visualization Best Practices:** Follow best practices for notebook visualizations
+
+### Memory-Efficient Data Processing
+
+- **Large Dataset Handling:** Process large datasets without memory issues
+- **Chunk Processing:** Use chunking for large data operations
+- **Memory Monitoring:** Monitor memory usage during processing
+- **Resource Management:** Manage computational resources efficiently
+
+### Report Generation Patterns
+
+- **Structured Reports:** Generate well-structured analytical reports
+- **Data Consolidation:** Consolidate analysis results effectively
+- **Report Organization:** Organize reports for clarity and usability
+- **Output Management:** Manage report outputs and storage
+
+## **Error Handling & Recovery Strategies**
+
+### System-Wide Debugging Approach
+
+- **Comprehensive Investigation:** Investigate entire system, not just specific components
+- **Root Cause Analysis:** Identify underlying causes of issues
+- **Dependency Analysis:** Check all related components and dependencies
+- **System Architecture Review:** Review system architecture for issues
+
+### Root Cause Analysis in Notebooks
+
+- **Issue Isolation:** Isolate issues to specific cells or operations
+- **Pattern Recognition:** Identify patterns in errors and failures
+- **Dependency Tracking:** Track dependencies and their impact
+- **Systematic Analysis:** Use systematic approach to root cause analysis
+
+### User Feedback Integration Protocol
+
+- **Feedback Processing:** Process user feedback as critical failure signals
+- **Perspective Restart:** Restart analysis from corrected user perspective
+- **Requirement Clarification:** Clarify requirements based on user feedback
+- **Solution Adaptation:** Adapt solutions based on user feedback
+
+### Failure Pattern Recognition
+
+- **Error Pattern Analysis:** Analyze patterns in errors and failures
+- **Common Issue Identification:** Identify common issues and their solutions
+- **Prevention Strategies:** Develop strategies to prevent common issues
+- **Pattern Documentation:** Document error patterns and solutions
+
+### Comprehensive Impact Analysis
+
+- **Change Impact Assessment:** Assess impact of changes on system
+- **Dependent Component Analysis:** Analyze impact on dependent components
+- **System-Wide Validation:** Validate changes across entire system
+- **Regression Prevention:** Prevent regressions through comprehensive analysis
+
+## **Performance Optimization Patterns**
+
+### Calculation Caching Strategies
+
+- **Result Caching:** Cache calculation results to avoid recomputation
+- **Memory Management:** Manage memory usage for cached results
+- **Cache Invalidation:** Handle cache invalidation appropriately
+- **Performance Monitoring:** Monitor performance impact of caching
+
+### Efficient Loop Structures
+
+- **Loop Optimization:** Use efficient loop structures and break conditions
+- **Memory Management:** Manage memory usage in loops
+- **Performance Optimization:** Optimize loop performance
+- **Resource Management:** Manage computational resources in loops
+
+### Memory Optimization Techniques
+
+- **Variable Cleanup:** Clear large variables when no longer needed
+- **Memory Monitoring:** Monitor memory usage during operations
+- **Resource Management:** Manage computational resources efficiently
+- **Optimization Strategies:** Implement memory optimization strategies
+
+### Large Dataset Handling
+
+- **Chunk Processing:** Process large datasets in chunks
+- **Memory Management:** Handle memory constraints for large datasets
+- **Performance Optimization:** Optimize performance for large datasets
+- **Resource Planning:** Plan resources for large dataset operations
+
+## **Cross-References**
+
+- **Core Protocols:** Reference `@07 - notebook-management.md` for core notebook management protocols
+- **Testing Patterns:** Reference `@08 - notebook-testing.md` for testing and validation patterns
+
+## **Safety Protocols (MANDATORY)**
+
+### User Authorization Protocol
+- **NO analytics operations without explicit user approval**
+- **Analytics approval workflow:** Draft → Review → Approved → Execution
+- **User confirmation required:** For all major analytics operations
+- **Rollback plan:** Defined for each analytics execution phase
+
+### Quality Gates
+- **Linter integration:** All analytics code must pass linting
+- **Type checking:** Type safety validation required for analytics code
+- **Security scanning:** Security vulnerabilities check in analytics code
+- **Performance validation:** Analytics execution performance assessment
+
+### Cross-Platform Compatibility
+- **Unicode encoding discipline:** Consider Windows console limitations
+- **Text equivalents:** Replace emoji with text equivalents in analytics outputs
+- **Path verification:** Use absolute paths for file operations in analytics
+
+## **MCP Server Integration**
+
+### Available MCP Servers
+- **Pine Script v6:** For TradingView indicator analytics
+- **Technical Analysis:** For trading pattern analytics
+- **TradingView Scripts:** For indicator and strategy analytics
+- **Institutional Docs:** For institutional trading pattern analytics
+- **Clean Code:** For analytics code quality and best practices
+
+### MCP Usage Protocol
+- **Exhaustive MCP Usage:** Query ALL available MCP servers for comprehensive analytics knowledge
+- **Domain-Specific Application:** Apply MCP server knowledge to specific analytics domains
+- **Multi-Source Validation:** Cross-reference findings across multiple MCP servers
+- **Knowledge Synthesis:** Combine insights from different MCP servers for comprehensive analytics solutions
+
+## **Modern Analytics Practices**
+
+### CI/CD Integration
+- **Automated analytics execution:** Integrate analytics notebooks into CI/CD pipelines
+- **Quality gates:** Automated testing and validation of analytics outputs
+- **Performance monitoring:** Track analytics execution performance
+- **Error alerting:** Automated error detection and notification
+
+### Security Protocols
+- **Data protection:** Secure handling of sensitive data in analytics notebooks
+- **Access control:** Proper authentication and authorization for analytics access
+- **Audit logging:** Comprehensive logging of analytics operations
+- **Compliance:** GDPR, SOX, and other regulatory compliance requirements
+
+### Structured Logging Integration
+- **Analytics execution logging:** Structured logging of analytics execution
+- **Performance metrics:** Log performance metrics for analytics optimization
+- **Error tracking:** Comprehensive error logging and tracking
+- **Audit trails:** Complete audit trails for analytics operations
+
+*Updated: 2025-01-14*

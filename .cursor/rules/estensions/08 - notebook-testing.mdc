@@ -1,0 +1,240 @@
+---
+description: Jupyter notebook testing protocols with comprehensive safety and MCP integration
+globs: ["**/*.ipynb"]
+alwaysApply: false
+---
+
+# Jupyter Notebook Testing Protocol
+
+**Version:** 2.0
+**Updated:** 2025-01-14
+**Status:** Active
+**Integration:** GLOBAL-RULES.md, MCP Servers
+
+## **Phase 0: Reconnaissance (MANDATORY)**
+
+### Date Verification Protocol
+- **Current date verified:** `date +"%A, %Y-%m-%d %H:%M:%S UTC"`
+- **Timestamp accuracy:** All dates in test documentation verified
+
+### Test Environment Analysis
+- **Notebook structure assessment:** Analyze notebook complexity and dependencies
+- **Test data requirements:** Identify test data needs and sources
+- **Environment dependencies:** Verify all required dependencies and configurations
+- **System-wide impact analysis:** Identify all affected components and dependencies
+
+### Confidence Assessment Protocol
+**Before proceeding, assess confidence level:**
+- **Confidence ≥ 95%:** Proceed with notebook testing
+- **Confidence < 95%:** Apply systematic clarification process
+- **Evidence gathering:** Comprehensive evidence before proceeding
+- **Multi-source validation:** Cross-reference findings across multiple sources
+- **User confirmation:** Request user confirmation for uncertain decisions
+
+## **Database Testing Patterns**
+
+### Schema Verification Protocol
+
+- **Pre-Test Schema Check:** Always verify actual database schema before writing SQL tests
+- **Information Schema Usage:** Use `information_schema.tables` to verify table names and structure
+- **Assumption Prevention:** Never assume table structure without explicit verification
+- **Schema Documentation:** Include clear database schema information in test toolkits
+
+### Environment Setup Validation
+
+- **Environment Variable Loading:** Load and verify environment variables before testing
+- **Error Handling:** Use `.env` file loading with proper error handling
+- **System Dependencies:** Verify all required dependencies before test execution
+- **Configuration Validation:** Check database connections and API keys
+
+### Mock Database Fallback Protocol
+
+- **Graceful Fallback:** Implement fallback mechanisms for database connections
+- **Mock Database Clients:** Create mock clients when real connections unavailable
+- **Test Infrastructure:** Ensure tests can run without full infrastructure
+- **Connection Validation:** Verify database connectivity before test execution
+
+### Session Lifecycle Management
+
+- **SQLAlchemy Sessions:** Use appropriate object types (Pydantic vs SQLAlchemy)
+- **Session Boundaries:** Convert SQLAlchemy objects to Pydantic models when crossing boundaries
+- **Object Type Handling:** Avoid session boundary issues with proper type management
+- **Transaction Management:** Handle database transactions appropriately in tests
+
+## **Test Organization & Execution**
+
+### Test Suite Structure
+
+- **Setup Cell Patterns:** Standard imports, fixtures, and configuration cells
+- **Test Execution Order:** Manage test sequence and dependencies
+- **Result Consolidation:** Systematic approach to test result collection
+- **Reporting Standards:** Meaningful test versioning (FIX v1.0, OPTIMIZE v1.0)
+
+### Test Organization Strategies
+
+- **Single Responsibility:** Each test notebook focuses on specific functionality
+- **Logical Grouping:** Group related tests by functionality or component
+- **Dependency Management:** Clear test dependencies and execution order
+- **Result Management:** Consolidate test results and eliminate redundancy
+
+### Execution Management
+
+- **Immediate Verification:** Test every fix immediately after implementation
+- **Systematic Testing:** Use identify → fix → test → verify approach
+- **Pattern-Based Correction:** Use systematic analysis to fix multiple similar errors
+- **Cross-Reference Testing:** Verify all dependent components after changes
+
+## **Cross-Platform Compatibility**
+
+### Unicode Handling Protocol
+
+- **Windows Compatibility:** Replace emoji characters with text equivalents
+- **Cross-Platform Unicode:** Use systematic replacement across all related files
+- **Text Equivalents:** Replace `🚀` → `[START]`, `✅` → `[OK]` for Windows compatibility
+- **Comprehensive Impact Analysis:** Check all dependent files for Unicode issues
+
+### Path Handling
+
+- **Windows vs Unix:** Handle path differences appropriately
+- **Import Path Management:** Configure Python paths for shared modules
+- **Relative Imports:** Use `sys.path.append()` for relative imports
+- **Path Verification:** Verify imports work before proceeding
+
+### Environment-Specific Configurations
+
+- **Platform Detection:** Identify platform-specific requirements
+- **Configuration Management:** Handle different configurations per platform
+- **Dependency Management:** Manage platform-specific dependencies
+- **Testing Adaptation:** Adapt test strategies for different environments
+
+## **Validation & Verification Patterns**
+
+### Method Signature Verification
+
+- **Function Verification:** Use `hasattr()` and `type()` checks before calling functions
+- **Import Validation:** Verify imports work before using imported functions
+- **Parameter Checking:** Validate function parameters and return types
+- **Error Prevention:** Prevent AttributeError exceptions with proper verification
+
+### Datetime Handling Protocol
+
+- **Timezone Operations:** Use naive datetime first, then localize with `tz.localize()`
+- **Timezone-Aware Handling:** Never convert already timezone-aware datetimes
+- **Pandas Operations:** Use `pd.to_datetime()` before applying `.dt` accessor
+- **Datetime Validation:** Ensure proper datetime formatting for operations
+
+### Data Validation Patterns
+
+- **SQL Validation Testing:** Verify actual validation messages from system
+- **Response Validation:** Test with legitimate use cases to ensure proper balance
+- **Input Validation:** Validate inputs before processing
+- **Output Verification:** Verify expected outputs and error handling
+
+### Import Path Management
+
+- **Python Path Configuration:** Properly configure paths for shared modules
+- **Relative Import Handling:** Use `sys.path.append()` for relative imports
+- **Import Verification:** Verify imports work before proceeding
+- **Path Resolution:** Handle path resolution issues systematically
+
+## **Error Handling & Recovery**
+
+### System-Wide Debugging Protocol
+
+- **Comprehensive Investigation:** Investigate entire system, not just test failures
+- **Root Cause Analysis:** Test failures often reflect deeper system inconsistencies
+- **Dependency Analysis:** Check source code, dependencies, and configurations
+- **Impact Assessment:** Analyze system-wide impact of test failures
+
+### User Feedback Integration
+
+- **Negative Feedback Analysis:** When users report "nothing changed," investigate deeper issues
+- **Root Cause Investigation:** Look beyond surface-level fixes to system architecture
+- **Feedback Processing:** Treat user corrections as critical failure signals
+- **Perspective Restart:** Restart analysis from corrected user perspective
+
+### Pattern-Based Error Correction
+
+- **Systematic Pattern Analysis:** Use grep and regex to identify similar errors
+- **Batch Error Fixing:** Fix all occurrences of same error pattern simultaneously
+- **Error Pattern Recognition:** Identify common error patterns across files
+- **Comprehensive Fixes:** Ensure fixes address all similar issues
+
+## **Quality Assurance**
+
+### Content Verification Protocol
+
+- **Pre-Edit Analysis:** Use systematic analysis to understand content scope
+- **Post-Edit Verification:** Reread files immediately after changes
+- **Content Integrity:** Verify complete content transfer and no data loss
+- **Cross-Reference Validation:** Ensure all references and imports work
+
+### Function Scope Verification
+
+- **Usage Pattern Analysis:** Verify actual usage patterns across codebase
+- **Shared vs Local Placement:** Functions used only in one context should remain local
+- **Method Implementation:** Verify methods exist using `hasattr()` checks
+- **Scope Analysis:** Determine appropriate scope for functions and methods
+
+### Comprehensive Impact Analysis
+
+- **Dependent File Analysis:** Check all dependent files for potential issues
+- **Change Impact Assessment:** Analyze impact of changes on related components
+- **Systematic Verification:** Use grep/pattern matching to identify affected files
+- **Cross-Component Validation:** Ensure changes don't break related functionality
+
+## **Safety Protocols (MANDATORY)**
+
+### User Authorization Protocol
+- **NO test execution without explicit user approval**
+- **Test approval workflow:** Draft → Review → Approved → Execution
+- **User confirmation required:** For all major test operations
+- **Rollback plan:** Defined for each test execution phase
+
+### Quality Gates
+- **Linter integration:** All test code must pass linting
+- **Type checking:** Type safety validation required for test code
+- **Security scanning:** Security vulnerabilities check in test code
+- **Performance validation:** Test execution performance assessment
+
+### Cross-Platform Compatibility
+- **Unicode encoding discipline:** Consider Windows console limitations
+- **Text equivalents:** Replace emoji with text equivalents in test outputs
+- **Path verification:** Use absolute paths for file operations in tests
+
+## **MCP Server Integration**
+
+### Available MCP Servers
+- **Pine Script v6:** For TradingView indicator testing
+- **Technical Analysis:** For trading pattern testing
+- **TradingView Scripts:** For indicator and strategy testing
+- **Institutional Docs:** For institutional trading pattern testing
+- **Clean Code:** For test code quality and best practices
+
+### MCP Usage Protocol
+- **Exhaustive MCP Usage:** Query ALL available MCP servers for comprehensive testing knowledge
+- **Domain-Specific Application:** Apply MCP server knowledge to specific testing domains
+- **Multi-Source Validation:** Cross-reference findings across multiple MCP servers
+- **Knowledge Synthesis:** Combine insights from different MCP servers for comprehensive testing solutions
+
+## **Modern Testing Practices**
+
+### CI/CD Integration
+- **Automated notebook testing:** Integrate notebook tests into CI/CD pipelines
+- **Quality gates:** Automated testing and validation of notebook outputs
+- **Performance monitoring:** Track notebook test execution performance
+- **Error alerting:** Automated error detection and notification
+
+### Security Protocols
+- **Data protection:** Secure handling of sensitive data in notebook tests
+- **Access control:** Proper authentication and authorization for test access
+- **Audit logging:** Comprehensive logging of notebook test operations
+- **Compliance:** GDPR, SOX, and other regulatory compliance requirements
+
+### Structured Logging Integration
+- **Test execution logging:** Structured logging of test execution
+- **Performance metrics:** Log performance metrics for test optimization
+- **Error tracking:** Comprehensive error logging and tracking
+- **Audit trails:** Complete audit trails for test operations
+
+*Updated: 2025-01-14*

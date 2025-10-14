@@ -1,0 +1,230 @@
+---
+description: Jupyter notebook management protocols with comprehensive safety and MCP integration
+globs: ["**/*.ipynb"]
+alwaysApply: false
+---
+
+# Notebook Management Protocol
+
+**Version:** 2.0
+**Updated:** 2025-01-14
+**Status:** Active
+**Integration:** GLOBAL-RULES.md, MCP Servers
+
+## **Core Principles**
+
+- **Notebook Complexity Management:** For Jupyter notebooks with duplicates, recreate clean sections instead of attempting in-place modifications. Notebook structure is complex and content matching is error-prone.
+- **Content Matching Precision:** When using edit tools, verify exact content matches before attempting modifications. Failed matches indicate structural complexity requiring alternative approaches.
+- **Duplicate Detection Strategy:** Use search tools (grep, pattern matching) to identify all duplicate patterns before attempting cleanup operations. This prevents missing duplicates and ensures comprehensive cleanup.
+- **User Intent Parsing:** Simple requests like "fai ordine" (make order) mean direct cleanup and organization, not comprehensive analysis. Lead with action, not explanation.
+
+## **Phase 0: Reconnaissance (MANDATORY)**
+
+### Date Verification Protocol
+- **Current date verified:** `date +"%A, %Y-%m-%d %H:%M:%S UTC"`
+- **Timestamp accuracy:** All dates in notebook documentation verified
+
+### Notebook Structure Analysis
+- **File size assessment:** Calculate JSON overhead and context window impact
+- **Cell complexity analysis:** Identify code, markdown, and raw cell types
+- **Dependency mapping:** Analyze imports and external dependencies
+- **Execution state verification:** Check kernel state and variable persistence
+
+### Confidence Assessment Protocol
+**Before proceeding, assess confidence level:**
+- **Confidence ≥ 95%:** Proceed with notebook operations
+- **Confidence < 95%:** Apply systematic clarification process
+- **Evidence gathering:** Comprehensive evidence before proceeding
+- **Multi-source validation:** Cross-reference findings across multiple sources
+- **User confirmation:** Request user confirmation for uncertain decisions
+
+## **Jupyter Notebook Architecture Protocol**
+
+### JSON Structure & Tool Limitations
+
+- **JSON-Based Structure:** Jupyter notebooks are JSON files with complex nested structure containing cells, metadata, and execution state
+- **Cell Metadata Complexity:** Each cell contains execution_count, outputs, metadata, and source arrays that complicate string matching
+- **Tool Matching Failures:** edit_notebook tool fails because it matches against display content, not the underlying JSON structure
+- **String Matching Complexity:** JSON contains escaped characters, whitespace normalization, and cell-specific formatting that breaks exact matches
+- **Fallback Strategy Hierarchy:**
+  1. Reduce context window (3 lines before/after)
+  2. Target unique cell identifiers (imports, function signatures)
+  3. Cell recreation with `is_new_cell: true`
+  4. Manual JSON editing (last resort)
+
+### Cell Type Handling
+
+- **Code Cells:** Handle Python code with proper indentation preservation
+- **Markdown Cells:** Preserve formatting and link structure
+- **Raw Cells:** Maintain exact content without modification
+- **Whitespace Preservation:** Maintain original indentation and spacing patterns
+- **Failed Match Diagnostic:** When edit_notebook fails, analyze JSON structure vs display content mismatch
+
+## **Context Window & Size Management Protocol**
+
+### Notebook Size Calculation Formula
+
+- **JSON Overhead:** ~2-3x display content size due to metadata and structure
+- **Cell Metadata:** ~50-100 characters per cell for execution state and formatting
+- **Output Data:** Variable size (can be 10x+ code size for dataframes/plots)
+- **Context Window Impact:** File size × 1.5 for token estimation in Cursor IDE
+- **Cell Count vs Line Count:** Distinguish between display lines and actual cell count
+
+### Practical Size Tiers
+
+- **Simple Notebooks (≤200 display lines / ≤15KB file):** Safe for all operations
+- **Medium Notebooks (200-500 lines / 15-50KB):** Requires sectioned editing
+- **Large Notebooks (500-1000 lines / 50-150KB):** Context window risk, mandatory division
+- **Critical Notebooks (>1000 lines / >150KB):** Guaranteed failures, immediate division required
+
+### Evidence-Based Thresholds
+
+- Based on actual Cursor IDE behavior and context window limitations
+- File size is more reliable indicator than line count due to output data variability
+- Context window failures occur predictably at specific file size thresholds
+
+## **Cell Editing Strategy Protocol**
+
+### Primary Approach
+
+- **Extensive Context:** Use 5+ lines before/after for edit_notebook operations
+- **Unique Identifiers:** Target distinctive cell content (imports, function signatures, comments)
+- **Cell Type Awareness:** Handle code, markdown, and raw cells appropriately
+
+### Fallback Hierarchy
+
+1. **Reduce Context Window:** Use 3 lines before/after for simpler matches
+2. **Target Unique Identifiers:** Focus on imports, function signatures, distinctive comments
+3. **Cell Recreation:** Use `is_new_cell: true` with complete cell content
+4. **Manual JSON Editing:** Last resort for complex structural changes
+
+### Diagnostic Protocol
+
+- **Failed Match Analysis:** Identify JSON structure vs display content differences
+- **Whitespace Issues:** Check for indentation and spacing mismatches
+- **Character Encoding:** Verify Unicode and special character handling
+- **Cell Boundary Detection:** Ensure proper cell identification and targeting
+
+## **Notebook Organization & Division Protocol**
+
+### Single Responsibility Principle
+
+- **Setup/Configuration Notebooks:** Imports, environment variables, utility functions
+- **Core Logic Notebooks:** Main functionality, business logic, algorithms
+- **Testing Notebooks:** Unit tests, integration tests, validation scripts
+- **Analysis Notebooks:** Data exploration, reporting, visualization
+
+### Domain-Based Division Patterns
+
+- **Functional Separation:** Each notebook has one clear, single responsibility
+- **Dependency Management:** Clear import paths and shared utility modules
+- **Cross-Notebook Coordination:** Systematic approach to shared components
+- **Content Transfer Verification:** Use search tools to verify complete content transfer
+
+### Division Strategy
+
+- **Scope Assessment:** Use systematic analysis (grep, pattern matching) to determine content scope
+- **Logical Grouping:** Divide by functionality rather than arbitrary size limits
+- **Dependency Tracking:** Identify and manage cross-notebook dependencies
+- **Import Path Coordination:** Ensure proper module loading and path configuration
+
+## **Jupyter Kernel Lifecycle Protocol**
+
+### Kernel vs Notebook Distinction
+
+- **Kernel State:** Separate from notebook file, persists across sessions
+- **Variable Persistence:** Variables remain in memory across cell edits
+- **Execution State:** Execution count and output history maintained by kernel
+- **Memory Management:** Long-running kernels require periodic cleanup
+
+### State Management Strategies
+
+- **Preserve Kernel State:** When possible, maintain variable state across edits
+- **Kernel Restart:** When memory issues or state corruption occurs
+- **Clear Output:** Remove output data while preserving kernel state
+- **Kernel Interrupt:** Stop execution without losing kernel state
+
+### Memory Management
+
+- **Long-Running Kernels:** Monitor memory usage and restart when necessary
+- **Variable Cleanup:** Clear large variables when no longer needed
+- **Output Management:** Remove large output data to reduce memory footprint
+- **State Verification:** Use `id()` checks to verify kernel state consistency
+
+## **Content Verification & Quality Protocol**
+
+### Pre-Edit Verification
+
+- **Content Analysis:** Use grep and pattern matching to understand scope
+- **Duplicate Detection:** Identify all duplicate patterns before cleanup
+- **Structure Assessment:** Analyze notebook organization and dependencies
+- **Impact Analysis:** Check all dependent files for potential issues
+
+### Post-Edit Verification
+
+- **Reread Verification:** Read modified files immediately after changes
+- **Execution Testing:** Test cell execution to verify functionality
+- **Content Integrity:** Verify complete content transfer and no data loss
+- **Cross-Reference Validation:** Ensure all references and imports work correctly
+
+### Quality Assurance
+
+- **Duplicate Elimination:** Remove redundant content and consolidate functionality
+- **Content Consolidation:** One focused report per notebook
+- **Systematic Cleanup:** Use search tools to identify and fix all similar patterns
+- **Verification Protocol:** Never assume content structure without verification
+
+## **Cross-References**
+
+- **Testing Patterns:** Reference `@08 - notebook-testing.md` for database testing, test organization, cross-platform compatibility, and validation patterns
+- **Analytics Workflows:** Reference `@09 - notebook-analytics.md` for agent integration, debugging, data analysis, and error handling patterns
+
+## **Safety Protocols (MANDATORY)**
+
+### User Authorization Protocol
+- **NO notebook operations without explicit user approval**
+- **Notebook modification approval workflow:** Draft → Review → Approved → Implementation
+- **User confirmation required:** For all major structural changes
+- **Rollback plan:** Defined for each notebook modification phase
+
+### Quality Gates
+- **Linter integration:** All notebook code must pass linting
+- **Type checking:** Type safety validation required for Python code
+- **Security scanning:** Security vulnerabilities check in notebook code
+- **Performance validation:** Notebook execution performance assessment
+
+### Cross-Platform Compatibility
+- **Unicode encoding discipline:** Consider Windows console limitations
+- **Text equivalents:** Replace emoji with text equivalents in notebook outputs
+- **Path verification:** Use absolute paths for file operations in notebooks
+
+## **MCP Server Integration**
+
+### Available MCP Servers
+- **Pine Script v6:** For TradingView indicator development
+- **Technical Analysis:** For trading pattern analysis
+- **TradingView Scripts:** For indicator and strategy development
+- **Institutional Docs:** For institutional trading patterns
+- **Clean Code:** For code quality and best practices
+
+### MCP Usage Protocol
+- **Exhaustive MCP Usage:** Query ALL available MCP servers for comprehensive knowledge synthesis
+- **Domain-Specific Application:** Apply MCP server knowledge to specific domains
+- **Multi-Source Validation:** Cross-reference findings across multiple MCP servers
+- **Knowledge Synthesis:** Combine insights from different MCP servers for comprehensive solutions
+
+## **Modern Practices Integration**
+
+### CI/CD Integration
+- **Automated notebook execution:** Integrate notebooks into CI/CD pipelines
+- **Quality gates:** Automated testing and validation of notebook outputs
+- **Performance monitoring:** Track notebook execution performance
+- **Error alerting:** Automated error detection and notification
+
+### Security Protocols
+- **Data protection:** Secure handling of sensitive data in notebooks
+- **Access control:** Proper authentication and authorization for notebook access
+- **Audit logging:** Comprehensive logging of notebook operations
+- **Compliance:** GDPR, SOX, and other regulatory compliance requirements
+
+*Updated: 2025-01-14*
