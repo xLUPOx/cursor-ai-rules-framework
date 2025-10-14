@@ -11,23 +11,23 @@ This framework enforces a rigorous workflow of reconnaissance, planning, safe ex
 ## 📁 Framework Overview
 
 ### Core Components
-- **GLOBAL-RULES.md** - Main operational doctrine and protocols
+- **GLOBAL-RULES.mdc** - Main operational doctrine and protocols
 - **workflow/** - Planning and execution rules for development tasks
 - **docs/** - Context-aware documentation system (corporate vs startup)
 - **estensions/** - Specialized rules for specific domains
 
 ### Documentation System
-- **Standards** - General best practices (corporate/startup contexts)
+- **Guidelines** - Template base for creating feature-specific guidelines (corporate/startup contexts)
 - **Templates** - Reusable starting points for features and tasks
-- **Active Work** - Current development with feature-specific standards
-- **Workflow Integration** - Automated execution with safety protocols
+- **Active Work** - Current development with feature-specific guidelines that extend and integrate with general guidelines
+- **Workflow Integration** - Automated execution with safety protocols using integrated guidelines approach
 
 ## 🚀 Quick Start
 
 ### 1. Install the Core Doctrine
 
 **For Global Use (Recommended):**
-- Install `01 - core.md` as a global rule in your Cursor IDE
+- Install `GLOBAL-RULES.mdc` as a global rule in your Cursor IDE
 - This ensures all your projects benefit from this disciplined foundation
 
 **For Project-Specific Use:**
@@ -57,7 +57,7 @@ This framework enforces a rigorous workflow of reconnaissance, planning, safe ex
 
 ### Core Files
 
-- **`GLOBAL-RULES.md`** - Main framework documentation and operational doctrine
+- **`GLOBAL-RULES.mdc`** - Main framework documentation and operational doctrine
 - **`workflow/plan.md`** - Planning phase protocols
 - **`workflow/execute.md`** - Execution phase protocols
 
@@ -90,12 +90,12 @@ This framework enforces a rigorous workflow of reconnaissance, planning, safe ex
 ### Installation Types
 
 **1. Core Doctrine (Required):**
-- Install `GLOBAL-RULES.md` as a global rule in Cursor
+- Install `GLOBAL-RULES.mdc` as a global rule in Cursor
 - This provides the foundational operational principles and all protocols
 
 **2. Workflow Extensions (Optional):**
-- `workflow/plan.md` - Enhanced planning phase protocols
-- `workflow/execute.md` - Enhanced execution phase protocols
+- `workflow/plan.md` - Enhanced planning phase protocols with integrated standards approach
+- `workflow/execute.md` - Enhanced execution phase protocols with integrated standards approach
 
 **3. Specialized Extensions (Install in Cursor Settings):**
 - `07-11` - Domain-specific rules (notebooks, Pine Script, etc.)
@@ -110,7 +110,7 @@ This framework enforces a rigorous workflow of reconnaissance, planning, safe ex
 ### Typical Session Workflow
 
 1. **Install Core Framework:**
-   - Install `GLOBAL-RULES.md` as a global rule in Cursor
+   - Install `GLOBAL-RULES.mdc` as a global rule in Cursor
    - Optionally install specialized extensions from `estensions/` directory
    - Framework automatically activates all protocols
 
@@ -183,6 +183,7 @@ This framework is inspired by and adapted from the original work of [aashari](ht
 - Integrated MCP server support protocols
 - Enhanced communication guidelines and conciseness directives
 - Added comprehensive documentation and usage examples
+- **Integrated guidelines approach** - Feature-specific guidelines extend and integrate with general guidelines for complete coverage
 
 ## 📄 License
 
@@ -192,4 +193,4 @@ This framework is provided as-is for educational and professional use. Please re
 
 **Welcome to a more disciplined, reliable, and truly autonomous way of working with AI.**
 
-*Updated: 2025-01-13*
+*Updated: 2025-10-14*
