@@ -122,7 +122,7 @@ For each commit specify:
 ```markdown
 # Task: [Brief Title]
 
-## Commit 1: [type: description [docs/active/tasks/YYYY-MM-DD-[feature-name]-task.md]]
+## Commit 1: [type: description [YYYY-MM-DD-[feature-name]-task.md]]
 **Description:**
 [Details from feature templates in docs/guidelines/ and `docs/active/features/[feature-name]/`]
 
@@ -150,7 +150,7 @@ For each commit specify:
 
 ---
 
-## Commit 2: [type: description [docs/active/tasks/YYYY-MM-DD-[feature-name]-task.md]]
+## Commit 2: [type: description [YYYY-MM-DD-[feature-name]-task.md]]
 [Repeat structure as needed based on templates]
 ```
 
@@ -170,8 +170,8 @@ Use: `feat:`, `fix:`, `test:`, `docs:`, `chore:` with conventional commits forma
 
 ### User Authorization Protocol (CRITICAL)
 - **MANDATORY user approval** before ANY commit
-- **Present commit message** for user review
-- **Request explicit confirmation:** "Are you sure to commit this?"
+- **Present commit message with branch specification** for user review
+- **Request explicit confirmation:** "Are you sure to commit this to [branch-name]?"
 - **NO commit without user approval**
 
 ### Pre-Commit Safety Checklist (MANDATORY)
@@ -179,8 +179,8 @@ Use: `feat:`, `fix:`, `test:`, `docs:`, `chore:` with conventional commits forma
 1. **STOP** - Never commit immediately
 2. **STAGE** - `git add` specific files (MANDATORY)
 3. **SHOW** - Display staged files with `git status`
-4. **PRESENT** - Show proposed commit message
-5. **ASK** - "Are you sure to commit this?"
+4. **PRESENT** - Show proposed commit message with branch name
+5. **ASK** - "Are you sure to commit this to [branch-name]?"
 6. **WAIT** - For explicit user confirmation
 7. **VERIFY** - User approval received
 8. **PROCEED** - Only after approval

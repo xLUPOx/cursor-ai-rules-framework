@@ -177,8 +177,8 @@ alwaysApply: false
 
 ### 5. User Authorization Protocol (CRITICAL)
 - **MANDATORY user approval** before ANY commit
-- **Present commit message** for user review
-- **Request explicit confirmation:** "Are you sure to commit this?"
+- **Present commit message with branch specification** for user review
+- **Request explicit confirmation:** "Are you sure to commit this to [branch-name]?"
 - **NO commit without user approval**
 
 ### Pre-Commit Safety Checklist (MANDATORY)
@@ -186,8 +186,8 @@ alwaysApply: false
 1. **STOP** - Never commit immediately
 2. **STAGE** - `git add` specific files (MANDATORY)
 3. **SHOW** - Display staged files with `git status`
-4. **PRESENT** - Show proposed commit message
-5. **ASK** - "Are you sure to commit this?"
+4. **PRESENT** - Show proposed commit message with branch name
+5. **ASK** - "Are you sure to commit this to [branch-name]?"
 6. **WAIT** - For explicit user confirmation
 7. **VERIFY** - User approval received
 8. **PROCEED** - Only after approval
@@ -200,7 +200,7 @@ alwaysApply: false
 ### 5. Commit Phase (With Safety)
 - **Stage changes:** `git add` with specific files (MANDATORY before commit request)
 - **Show staged files:** Display exactly what will be committed with `git status`
-- **User confirmation:** "Are you sure to commit this?"
+- **User confirmation:** "Are you sure to commit this to [branch-name]?"
 - **Commit:** Only after explicit user approval
 - **Verification:** Confirm commit was successful
 
