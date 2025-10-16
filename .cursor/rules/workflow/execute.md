@@ -1,6 +1,6 @@
 ---
 description: Execute task plans with context-aware approach (startup vs corporate)
-globs: ["docs/active/tasks/*.md"]
+globs: []
 alwaysApply: false
 ---
 

@@ -1,13 +1,13 @@
 ---
 description: Create and execute task plans with context-aware approach (startup vs corporate)
-globs: ["docs/templates/corporate/*.md", "docs/templates/startup/*.md"]
+globs: []
 alwaysApply: false
 ---
 
 # Create and Execute Task Plan
 
 **Goal:** Plan tasks for features by reading:
-- Feature templates from `docs/guidelines (prepared by user)
+- Feature guidelines from `docs/guidelines (prepared by user)
 - Coding style from `docs/guidelines/project_coding_style_analysis.json`
 
 Generate task plan at `docs/active/tasks/[date]-[feature-name]-task.md` with appropriate testing, logging, and safety protocols from `docs/active/features/[feature-name]/`.
@@ -15,7 +15,7 @@ Generate task plan at `docs/active/tasks/[date]-[feature-name]-task.md` with app
 ## Phase 0: Reconnaissance (MANDATORY)
 
 ### Coding Style Analysis Integration (MANDATORY - FIRST STEP)
-**CRITICAL:** Before ANY planning, ALWAYS read project coding style and templates:
+**CRITICAL:** Before ANY planning, ALWAYS read project coding style and guidelines:
 
 1. **Read project coding style analysis:**
    - **Location:** `docs/guidelines/project_coding_style_analysis.json`
@@ -26,14 +26,14 @@ Generate task plan at `docs/active/tasks/[date]-[feature-name]-task.md` with app
      - `architectural_patterns` → Follow existing patterns
      - `overall_philosophy` → Guide implementation approach
 
-2. **Read feature-specific templates:**
+2. **Read feature-specific guidelines:**
    - **Location:** `docs/active/features/[feature-name]/` and `docs/guidelines/` (prepared by user)
-   - **Templates to read:**
+   - **guidelines to read:**
      - Feature specification
      - Testing guidelines
      - Logging requirements
      - Technical specifications
-   - **These templates define the implementation approach**
+   - **These guidelines define the implementation approach**
 
 ### User Workflow Selection Protocol
 **MANDATORY:** Before any planning, ask user:
@@ -45,7 +45,7 @@ Generate task plan at `docs/active/tasks/[date]-[feature-name]-task.md` with app
 
 2. **Feature Selection (if Option A):**
    - **Check existing features:** `ls `docs/active/features/` - [list available feature directories]
-   - **If no features found:** "No feature templates found in `docs/active/features/`. Please prepare feature templates first."
+   - **If no features found:** "No feature found in `docs/active/features/`. Please prepare feature first."
    - **If features exist:** Present available features to user:
      - **Available Features:** "Found [X] feature: [list feature names]"
      - **User Choice:** "Which feature do you want to plan tasks for?"
@@ -124,7 +124,7 @@ For each commit specify:
 
 ## Commit 1: [type: description [YYYY-MM-DD-[feature-name]-task.md]]
 **Description:**
-[Details from feature templates in docs/guidelines/ and `docs/active/features/[feature-name]/`]
+[Details from feature guidelines in docs/guidelines/ and `docs/active/features/[feature-name]/`]
 
 **Style Compliance (from project_coding_style_analysis.json):**
 - **Naming:** Follow `naming_conventions` (functions: snake_case, classes: PascalCase, etc.)
@@ -132,16 +132,16 @@ For each commit specify:
 - **Testing:** Use `testing_strategy.testing_framework` (e.g., pytest)
 - **Patterns:** Follow `architectural_patterns.primary_patterns`
 
-**Template Compliance:**
-- Follow guidelines from user-selected templates (docs/templates/corporate/ or startup/)
+**Guideline Compliance:**
+- Follow guidelines from user-selected guidelines (docs/guidelines)
 - Apply feature-specific requirements from docs/guidelines/[feature-name]/
 
 **Verification:**
 1. **Automated Test(s):**
    * **Command:** `[testing_framework from JSON]` (e.g., `pytest`)
-   * **Expected Outcome:** `[assertions from templates]`
+   * **Expected Outcome:** `[assertions from guidelines]`
 2. **Logging Check:**
-   * **Action:** `[trigger action from templates]`
+   * **Action:** `[trigger action from guidelines]`
    * **Expected Log:** `[format from JSON: error_handling.logging]`
 3. **Safety Check:**
    * **Rollback:** `[git checkout HEAD~1 -- path/to/file]`
@@ -151,7 +151,7 @@ For each commit specify:
 ---
 
 ## Commit 2: [type: description [YYYY-MM-DD-[feature-name]-task.md]]
-[Repeat structure as needed based on templates]
+[Repeat structure as needed based on guidelines]
 ```
 
 ## Semantic Commit Types
