@@ -2,67 +2,67 @@
 
 ## What This System Does
 
-This documentation system provides **context-aware development workflows** that automatically adapt to your project type:
+This documentation system provides a **unified development workflow** with **dual validation**:
 
-### 🏢 **Corporate Context**
-- **Comprehensive standards**: Full testing, logging, security protocols
-- **Detailed documentation**: Complete requirements and specifications  
-- **Enterprise-grade**: Security, compliance, and scalability focus
-- **Quality gates**: Rigorous testing and validation at each step
+### ✅ **Dual Validation Approach**
+- **Coding Style Validation**: All code validates against `project_coding_style_analysis.json`
+- **Template Validation**: All code validates against user-selected templates
+- **Solution Proposals**: When violations detected, system proposes corrected code
+- **User Control**: User selects templates and approves all changes
 
-### 🚀 **Startup Context**
-- **Simplified standards**: Essential testing and logging only
-- **Quick documentation**: Rapid iteration and MVP focus
-- **Agile approach**: Fast delivery with minimal overhead
-- **Essential quality**: Core functionality with streamlined processes
+### 🎯 **Single Source of Truth**
+- **Coding Style**: `docs/guidelines/project_coding_style_analysis.json` (mandatory)
+- **General Guidelines**: `docs/guidelines/` (best practices)
+- **Feature Requirements**: `docs/active/features/[feature-name]/` (user-prepared)
+- **Implementation Templates**: `docs/templates/` (user-selectable)
 
 ## How It Works
 
 ## Architectural Principles
 
-### 1. Context-Aware Design
-- **Corporate Context**: Comprehensive standards, detailed documentation, enterprise-grade security
-- **Startup Context**: Simplified standards, rapid iteration, MVP-focused approach
-- **Adaptive Application**: Standards automatically applied based on project context
+### 1. Unified Workflow Design
+- **Single Process**: No more corporate/startup/balanced contexts
+- **JSON-Driven Style**: Coding style defined by `project_coding_style_analysis.json`
+- **Guidelines-Driven**: General guidelines from `docs/guidelines/`
+- **Feature-Driven Requirements**: User prepares guidelines in `docs/active/features/[feature-name]/`
 
-### 2. Hierarchical Organization
-- **Standards**: General best practices and guidelines
-- **Templates**: Reusable starting points for common tasks
-- **Active Work**: Current development work with specific requirements
-- **Archive**: Completed work for reference and learning
+### 2. Dual Validation Architecture
+- **JSON Validation**: Naming, error handling, testing framework, architectural patterns
+- **Guidelines Validation**: General guidelines + feature-specific requirements
+- **Violation Handling**: System proposes solutions instead of rejecting
+- **User Approval**: Mandatory for all commits
 
-### 3. Separation of Concerns
-- **Standards**: What to do and how to do it
-- **Templates**: Starting points for new work
-- **Active Work**: Current development with specific needs
-- **Workflow**: Automated execution and safety protocols
+### 3. Hierarchical Organization
+- **Guidelines**: Coding style JSON + general best practices
+- **Active Features**: Feature-specific guidelines (user-prepared)
+- **Templates**: User-selectable base templates (corporate or startup)
+- **Active Tasks**: Generated task plans with dual validation
+- **Workflow**: Automated execution with safety protocols
 
 ## System Components
 
 ### Guidelines Layer (`docs/guidelines/`)
-**Purpose**: Define general best practices and guidelines
+**Purpose**: Coding style rules and general guidelines
 **Structure**:
 ```
 docs/guidelines/
-├── corporate/           # Enterprise-grade guidelines (placeholder)
-│   └── example.md       # Placeholder file
-└── startup/            # Startup-optimized guidelines (placeholder)
-    └── example.md       # Placeholder file
+├── project_coding_style_analysis.json  # MANDATORY coding style
+└── [general guidelines files]          # General best practices
 ```
-**Current Status**: Minimal implementation with placeholder files - to be populated with actual guidelines
+**Current Status**: JSON present, general guidelines as needed
 
 **Characteristics**:
-- **Comprehensive**: Cover all aspects of development
-- **Context-specific**: Different approaches for corporate vs startup
-- **Maintainable**: Regular updates and reviews
-- **Extensible**: Easy to add new standards
+- **Single Source of Truth**: `project_coding_style_analysis.json` defines all coding rules
+- **General Guidelines**: Best practices applicable across features
+- **Validation Source**: Primary validation source for all commits
+- **Stable**: Changes infrequently, mainly project-wide standards
 
 ### Templates Layer (`docs/templates/`)
-**Purpose**: Provide reusable starting points for common tasks
+**Purpose**: User-selectable implementation templates
 **Structure**:
 ```
 docs/templates/
-├── corporate/         # Corporate templates (6 files)
+├── corporate/         # Comprehensive templates
 │   ├── template-corporate-feature.md
 │   ├── template-corporate-logging.md
 │   ├── template-corporate-openapi.yaml
@@ -70,56 +70,54 @@ docs/templates/
 │   ├── template-corporate-task.md
 │   ├── template-corporate-tech.md
 │   └── template-corporate-testing.md
-└── startup/          # Startup templates (5 files)
+└── startup/          # Quick templates
     ├── template-startup-feature.md
     ├── template-startup-logging.md
     ├── template-startup-task.md
     ├── template-startup-tech.md
     └── template-startup-testing.md
 ```
-**Current Status**: Fully implemented with comprehensive template files
+**Current Status**: Fully implemented, user selects which to use
 
 **Characteristics**:
-- **Reusable**: Standard starting points for common tasks
-- **Context-aware**: Different templates for different contexts
-- **Comprehensive**: Cover all necessary aspects
-- **Maintainable**: Regular updates and improvements
+- **User-Selectable**: User chooses corporate or startup templates
+- **Base for Features**: Starting point for feature guidelines in `docs/active/features/[feature-name]/`
+- **Reference Material**: Used as base when creating feature-specific guidelines
+- **NOT Mandatory**: Templates are optional starting points, not enforced
 
 ### Active Work Layer (`docs/active/`)
-**Purpose**: Manage current development work with specific requirements
+**Purpose**: Feature-specific guidelines and generated task plans
 **Structure**:
 ```
 docs/active/
-├── features/          # Active feature development (currently empty)
-│   └── [feature-name]/ # Feature-specific standards (to be created)
-│       ├── feature-logging.md    # Custom logging for this feature
-│       ├── feature-testing.md    # Testing strategy for this feature
-│       ├── feature-api.yaml      # API specs for this feature
-│       ├── feature-tech.md       # Technology requirements
-│       └── feature-requirements.md # Feature requirements
-├── tasks/             # Active task execution
-│   └── example.md     # Example task file (existing)
-└── README.md          # Active development guide
+├── features/
+│   └── [feature-name]/                # Feature-specific guidelines (user-prepared)
+│       ├── feature-requirements.md
+│       ├── feature-logging.md
+│       ├── feature-testing.md
+│       └── feature-tech.md
+└── tasks/                             # Generated task plans
+    └── [date]-[feature-name]-task.md
 ```
-**Current Status**: Features directory empty, tasks contains example.md, README.md provides guidance
+**Current Status**: Features prepared by user, tasks generated by plan.md
 
 **Characteristics**:
-- **Specific**: Tailored to individual features and tasks
-- **Dynamic**: Updated during development
-- **Traceable**: Linked to general standards
-- **Archivable**: Moved to archive when complete
+- **Feature Guidelines**: User-prepared, specific to each feature
+- **Generated Tasks**: Created by plan.md automatically
+- **Standard Naming**: `[date]-[feature-name]-task.md` format
+- **Dual Validation**: Validates against JSON + guidelines
+- **Temporary**: Tasks can be archived after completion
 
 ### Workflow Layer (`.cursor/rules/workflow/`)
-**Purpose**: Automated execution and safety protocols
+**Purpose**: Automated execution with dual validation
 **Components**:
-- **plan.md**: Create task plans for EXISTING features
-- **execute.md**: Execute existing task plans from `docs/active/tasks/`
-- **Safety protocols**: User authorization, error handling, rollback
-- **Context awareness**: Apply feature-specific guidelines from `docs/active/features/[feature-name]/` AND general guidelines from `docs/guidelines/`
-- **Integration approach**: Feature-specific guidelines extend and customize general guidelines for complete coverage
+- **plan.md**: Create task plans by reading from `docs/guidelines/` and `docs/active/features/[feature-name]/`
+- **execute.md**: Execute tasks with dual validation (JSON + guidelines)
+- **Safety protocols**: User authorization, violation handling, solution proposals
 
-**Current Status**: Fully implemented and functional
-- **plan.md**: Working with globs `["docs/templates/corporate/*.md", "docs/templates/startup/*.md"]`
+**Current Status**: Fully implemented with unified workflow
+- **plan.md**: Reads JSON + general guidelines + feature-specific guidelines
+- **execute.md**: Validates against JSON + guidelines, proposes solutions
 - **execute.md**: Working with globs `["docs/active/tasks/*.md"]`
 - **Safety protocols**: User authorization, push prohibition, rollback mechanisms
 - **Path verification**: All referenced paths exist and are functional

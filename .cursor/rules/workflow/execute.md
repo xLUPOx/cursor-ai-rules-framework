@@ -6,9 +6,38 @@ alwaysApply: false
 
 # Execute Task Plan
 
-**Goal:** Execute commits from `docs/active/tasks/` with context-aware approach (startup vs corporate) and appropriate safety protocols from `docs/active/features/[feature-name]/`.
+**Goal:** Execute commits from `docs/active/tasks/` with validation against:
+- `docs/guidelines/project_coding_style_analysis.json` (coding style rules)
+- and secondary guidelines from `docs/guidelines/
 
 ## Phase 0: Reconnaissance (MANDATORY)
+
+### Dual Validation Protocol (MANDATORY - FIRST STEP)
+**CRITICAL:** Before ANY execution, ALWAYS read and validate against BOTH sources:
+
+**Source 1: Coding Style Analysis (JSON)**
+1. **Read:** `docs/guidelines/project_coding_style_analysis.json`
+2. **Extract enforcement rules:**
+   - `naming_conventions` → Enforce naming rules (snake_case, PascalCase, etc.)
+   - `error_handling.approach` → Match error handling style
+   - `testing_strategy.testing_framework` → Use correct test framework
+   - `architectural_patterns` → Follow existing patterns
+   - `code_organization` → Apply structure patterns
+   - `overall_philosophy` → Guide implementation approach
+
+**Source 2: Feature guidelines (Feature-Specific)**
+1. **Read:** Secondary guidelines from `docs/guidelines/
+2. **Read:** Feature info from `docs/active/features/[feature-name]/`
+3. **Extract requirements:**
+   - Implementation guidelines
+   - Verification steps
+   - Testing requirements
+   - Logging requirements
+
+**Validation Strategy:**
+- **BOTH sources must be satisfied** before commit
+- If violation detected in EITHER source → **PROPOSE SOLUTION** to user
+- If conflict between sources → **CONSULT USER** for clarification
 
 ### User Workflow Selection Protocol
 **MANDATORY:** Before any execution, check if called from plan.md:
@@ -28,7 +57,7 @@ alwaysApply: false
    - **Check existing task directories:**
      - **Active tasks:** `ls docs/active/tasks/` - [list existing task files]
      - **Active features:** `ls docs/active/features/` - [list feature directories]
-     - **Standards available:** `ls docs/active/features/[feature-name]/` for feature-specific standards
+     - **Standards available:** `ls docs/active/features/[feature-name]/` for feature-specific guidelines
    - **If no tasks found:** "No task plans found in docs/active/tasks/. Please create a task plan first."
    - **If no features found:** "No features found in docs/active/features/. Please create a feature first."
    - **If tasks and features exist:** Present available options to user:
@@ -37,28 +66,20 @@ alwaysApply: false
      - **User Choice:** "Which approach do you want to use: CORPORATE or STARTUP?"
 
 4. **User Confirmation (if called directly):**
-   - **MANDATORY:** "You selected [OPTION] with [CONTEXT] approach. Proceed?"
+   - **MANDATORY:** "You selected [TASK]. Proceed with execution?"
    - **MANDATORY:** Wait for explicit user confirmation
    - **MANDATORY:** Only proceed after user approval
 
 ### Setup & Verification
-1. **Check task file exists in active directory:**
-   - **Active tasks:** `ls docs/active/tasks/`
-   - **Feature standards:** `ls docs/active/features/[feature-name]/`
+1. **Check task file exists:** `ls docs/active/tasks/`
 2. **If missing:** Stop and notify user immediately
-3. **Read task file from docs/active/tasks/:** Parse all commits and verification steps
-4. **Read feature-specific standards:** Load appropriate standards from docs/active/features/[feature-name]/ based on context
-5. **Integrate general guidelines:** Always use docs/guidelines/corporate/ or docs/guidelines/startup/ as template base, combined with feature-specific guidelines
-6. **System-wide impact analysis:** Identify all affected components and dependencies
+3. **Read task file:** Parse all commits and verification steps
+4. **Read coding style:** Load `docs/guidelines/project_coding_style_analysis.json`
+5. **Read guidelines:** Load from `docs/guidelines/`
+6. **Read feature specifics:** Load from `docs/active/features/[feature-name]/`
+7. **System-wide impact analysis:** Identify all affected components and dependencies
 
 ### Confidence Assessment Protocol
-**CORPORATE context:**
-- If < 95%: Apply systematic clarification process
-- Gather comprehensive evidence before proceeding
-- Cross-reference findings across multiple sources
-- Request user confirmation for uncertain decisions
-
-**STARTUP context:**
 - If < 95%: Apply systematic clarification process
 - Gather comprehensive evidence before proceeding
 - Cross-reference findings across multiple sources
@@ -67,48 +88,94 @@ alwaysApply: false
 ## Execution Cycle (Per Commit)
 
 ### 1. Pre-Execution Safety Check
-**CORPORATE context:**
-- **Apply guidelines from:** `docs/active/features/[feature-name]/` (feature-specific) AND `docs/guidelines/corporate/` (template base integration)
+- **Apply guidelines from:** 
+  - `docs/guidelines/project_coding_style_analysis.json` (coding style)
+  - `docs/guidelines/` (general guidelines)
+  - `docs/active/features/[feature-name]/`  (feaure specific guidelines)
 - **Timeout enforcement:** All commands must have timeout
 - **Non-interactive execution:** Use flags to prevent interactive prompts
 - **Fail-fast semantics:** Scripts should exit immediately on error
 - **Cross-platform compatibility:** Consider Windows console limitations
 
-**STARTUP context:**
-- **Apply guidelines from:** `docs/active/features/[feature-name]/` (feature-specific) AND `docs/guidelines/startup/` (template base integration)
-- **Basic safety:** Essential protection only
-- **Quick execution:** Minimal overhead
-- **Cross-platform compatibility:** Consider Windows console limitations
-
 ### 2. Implement Phase
-**CORPORATE context:**
-- **Execute:** Commit instructions with safety wrappers from `docs/active/features/[feature-name]/` (feature-specific) AND `docs/guidelines/corporate/` (template base integration)
+
+**Pre-Implementation Dual Validation (MANDATORY):**
+
+**Validation Source 1: Coding Style (JSON)**
+- **Verify naming conventions:** Check against `naming_conventions` from JSON
+  - Functions: snake_case
+  - Classes: PascalCase
+  - Variables: snake_case
+  - Constants: UPPER_SNAKE_CASE
+- **Verify error handling:** Match `error_handling.approach` from JSON
+- **Verify testing framework:** Use `testing_strategy.testing_framework` from JSON
+- **Verify architectural patterns:** Follow `architectural_patterns` from JSON
+
+**Validation Source 2: Guidelines**
+- **Verify implementation guidelines:** Check against feature specific guidelines
+- **Verify general requirements:** Check against guidelines in `docs/guidelines/`
+- **Verify verification steps:** Ensure all guidelines requirements are met
+
+**Implementation:**
+- **Execute:** Commit instructions following BOTH JSON and guidelines
+- **Apply project philosophy:** Follow `overall_philosophy.primary_adjectives` from JSON
+- **Enforce naming:** Apply exact naming conventions from JSON
 - **Monitor:** Real-time output and error detection
 - **Timeout:** Maximum 5 minutes per command
 - **Rollback:** Immediate rollback on failure
 
-**STARTUP context:**
-- **Execute:** Commit instructions with basic safety from `docs/active/features/[feature-name]/` (feature-specific) AND `docs/guidelines/startup/` (template base integration)
-- **Monitor:** Basic output and error detection
-- **Timeout:** Maximum 2 minutes per command
-- **Rollback:** Basic rollback on failure
+**Violation Handling:**
+- If violation of JSON rules detected → **PROPOSE SOLUTION** to user
+- If violation of template rules detected → **PROPOSE SOLUTION** to user
+- If both satisfied → Proceed with commit
 
 ### 3. Verification Phase (MANDATORY)
-**CORPORATE context:**
-- **Apply guidelines from:** `docs/active/features/[feature-name]/` (feature-specific) AND `docs/guidelines/corporate/` (template base integration)
-- **Run ALL verification steps** specified for this commit
-- **Automated tests:** Execute with timeout and error handling
-- **Log inspection:** Verify logging output matches expectations
+- **Apply guidelines from:**
+  - `docs/guidelines/project_coding_style_analysis.json` (testing framework)
+  - `docs/guidelines/` (general verification)
+  - `docs/active/features/[feature-name]/` (specific feature verification)
+- **Run verification steps** specified in task commit
+- **Automated tests:** Execute with testing framework from JSON (e.g., pytest)
+- **Log inspection:** Verify logging matches `error_handling.logging` from JSON
 - **Safety checks:** Validate system integrity
 
-**STARTUP context:**
-- **Apply guidelines from:** `docs/active/features/[feature-name]/` (feature-specific) AND `docs/guidelines/startup/` (template base integration)
-- **Run essential verification steps** specified for this commit
-- **Basic tests:** Execute with basic error handling
-- **Quick checks:** Verify essential functionality
-- **Basic safety:** Validate core system integrity
+### 4. Dual Compliance Validation Protocol (CRITICAL)
+**MANDATORY validation before ANY commit against BOTH sources:**
 
-### 4. User Authorization Protocol (CRITICAL)
+**JSON Validation (project_coding_style_analysis.json):**
+1. **Naming Convention Check:**
+   - Functions match `naming_conventions.functions` (snake_case)
+   - Classes match `naming_conventions.classes` (PascalCase)
+   - Variables match `naming_conventions.variables` (snake_case)
+   - Constants match `naming_conventions.constants` (UPPER_SNAKE_CASE)
+
+2. **Error Handling Check:**
+   - Approach matches `error_handling.approach`
+   - Patterns match `error_handling.patterns`
+   - Logging follows `error_handling.logging`
+
+3. **Testing Check:**
+   - Framework matches `testing_strategy.testing_framework`
+   - Coverage aligns with `testing_strategy.coverage`
+
+4. **Architectural Patterns Check:**
+   - Implementation follows `architectural_patterns.primary_patterns`
+   - Design adheres to `architectural_patterns.design_principles`
+
+**Guidelines Validation (docs/guidelines/ + `docs/active/features/[feature-name]/`):**
+5. **Implementation Guidelines Check:**
+   - Code follows user-selected template guidelines
+   - Feature requirements from `docs/guidelines/` are met
+
+6. **Verification Steps Check:**
+   - All template-specified verification steps completed
+
+**Violation Response:**
+- If JSON violation → **PROPOSE SOLUTION** with corrected code
+- If template violation → **PROPOSE SOLUTION** with template-compliant code
+- If both pass → Proceed to User Authorization
+
+### 5. User Authorization Protocol (CRITICAL)
 - **MANDATORY user approval** before ANY commit
 - **Present commit message** for user review
 - **Request explicit confirmation:** "Are you sure to commit this?"
@@ -181,6 +248,46 @@ Task is complete when:
 - **User prompts:** Clear, specific requests for authorization
 
 ## Error Handling Protocol
+
+### Dual Compliance Prevention Protocol
+**MANDATORY:** Before any implementation, validate against BOTH sources:
+
+**Source 1: Coding Style Analysis (JSON)**
+1. **Read:** `docs/guidelines/project_coding_style_analysis.json`
+2. **Apply philosophy:** Follow `overall_philosophy.primary_adjectives`
+3. **Verify structure:** Must match `code_organization` patterns
+4. **Enforce naming:** Must follow `naming_conventions` exactly
+5. **Match error handling:** Must use `error_handling.approach` and patterns
+6. **Use correct testing:** Must use `testing_strategy.testing_framework`
+7. **Follow patterns:** Must adhere to `architectural_patterns`
+
+**Source 2: Guidelines**
+8. **Read specific features guidelines:** From `docs/active/features/[feature-name]/`
+9. **Read feature guidelines:** From `docs/active/features/[feature-name]/`
+10. **Apply template guidelines:** Follow implementation requirements
+
+**Violation Handling:**
+- If JSON violation → **STOP** → **PROPOSE SOLUTION** to user
+- If template violation → **STOP** → **PROPOSE SOLUTION** to user
+- If both satisfied → Proceed with implementation
+
+### Complexity Metrics Validation
+**From guidelines and JSON - NOT hardcoded:**
+1. **Check JSON:** Validate against `overall_philosophy.complexity_level`
+2. **Check guidelines:** Validate against guidelines-specified metrics
+3. **Reject violations:** If exceeds either JSON or template constraints
+
+### Validation Failure Protocol
+**When EITHER JSON or template validation fails:**
+1. **STOP execution** - Do not proceed with commit
+2. **Identify violation source:**
+   - JSON violation: Show which rule from `project_coding_style_analysis.json` was violated
+   - Template violation: Show which template requirement was not met
+3. **PROPOSE SOLUTION** - Provide corrected code that satisfies BOTH sources
+4. **Present to user** - Show original vs. proposed solution
+5. **Wait for approval** - User must approve or modify solution
+6. **Re-validate** - Run dual validation again after fix
+7. **Continue only** - After BOTH validations pass
 
 ### Error Recovery Strategies
 **Partial Failure Handling:**
