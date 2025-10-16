@@ -302,7 +302,7 @@ Task is complete when:
 4. **Level 4:** Full rollback and user notification
 
 **Rollback Coordination:**
-- **Pre-execution backup:** `git tag backup-$(date +%Y%m%d-%H%M%S)`
+- **Pre-execution backup:** `git tag backup-$(Get-Date -Format "yyyy-MM-dd-HH-mm")`
 - **Incremental rollback:** Per-commit rollback capability
 - **Full system rollback:** Complete task rollback
 - **User approval:** Mandatory before any rollback

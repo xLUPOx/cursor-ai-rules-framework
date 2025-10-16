@@ -56,8 +56,8 @@ Generate task plan at `docs/active/tasks/[date]-[feature-name]-task.md` with app
    - **MANDATORY:** Only proceed after user approval
 
 ### Date Verification Protocol
-1. **Get timestamp:** `date +"%Y-%m-%d-%H-%M"` to create filename
-2. **Verify current date:** `date +"%A, %Y-%m-%d %H:%M:%S UTC"` for documentation accuracy
+1. **Get timestamp:** `Get-Date -Format "yyyy-MM-dd-HH-mm"` to create filename
+2. **Verify current date:** `Get-Date -Format "yyyy-MM-dd-HH-mm"` for documentation accuracy
 3. **File naming:** `docs/active/tasks/[date]-[feature-name]-task.md`
 
 ### Project Structure Analysis
