@@ -10,6 +10,25 @@ alwaysApply: false
 - `docs/guidelines/project_coding_style_analysis.json` (coding style rules)
 - and secondary guidelines from `docs/guidelines/
 
+## 🚫 ANTI-OVERKILL PRINCIPLE (CRITICAL)
+
+**GOLDEN RULE:** Match effort to task complexity. Never apply enterprise-level solutions to simple tasks.
+
+**FORBIDDEN OVERKILL:**
+- Repository pattern for simple data access
+- Dependency injection for basic functions
+- Factory patterns for simple object creation
+- Comprehensive logging for basic operations
+- Extensive test suites for simple functions
+- Enterprise patterns for single-file changes
+
+**SIMPLE TASK APPROACH:**
+- Direct function calls
+- Basic error handling (try/catch)
+- Simple logging (print or basic logger)
+- Unit tests only (5-8 methods max)
+- No unnecessary abstractions
+
 ## Phase 0: Reconnaissance (MANDATORY)
 
 ### Dual Validation Protocol (MANDATORY - FIRST STEP)
@@ -99,76 +118,124 @@ alwaysApply: false
 
 ### 2. Implement Phase
 
+**Adaptive Intensity Protocol (MANDATORY - FIRST STEP)**
+**CRITICAL:** Match validation intensity to task complexity to prevent over-engineering and overkill.
+
+**ANTI-OVERKILL PRINCIPLE:** Never apply enterprise-level complexity to simple tasks. Match effort to actual requirements.
+
+**Task Complexity Assessment:**
+1. **SIMPLE TASK** (toolkit base, enum extension, single file changes):
+   - **Validation:** Basic naming conventions + essential error handling
+   - **Testing:** Unit tests only (5-8 test methods)
+   - **Logging:** Essential logging only (errors + key operations)
+   - **Patterns:** Basic patterns only (no enterprise patterns required)
+   - **Examples:** AnalyticsToolkit base, AgentType enum, single file fixes
+   - **ANTI-OVERKILL:** NO Repository pattern, NO Dependency Injection, NO Factory pattern, NO comprehensive logging
+
+2. **MEDIUM TASK** (multi-file changes, feature additions):
+   - **Validation:** Standard validation + error handling
+   - **Testing:** Unit + integration tests
+   - **Logging:** Structured logging for key operations
+   - **Patterns:** Standard architectural patterns
+   - **Examples:** Multi-file refactoring, feature additions
+   - **ANTI-OVERKILL:** Standard patterns only, NO enterprise-level complexity
+
+3. **COMPLEX TASK** (system-wide changes, new subsystems):
+   - **Validation:** Full dual validation protocol
+   - **Testing:** Comprehensive testing suite (unit + integration + performance + security)
+   - **Logging:** Full structured logging with loguru
+   - **Patterns:** All architectural patterns (Repository, Dependency injection, Factory, etc.)
+   - **Examples:** New subsystem, architecture changes, system-wide refactoring
+   - **ANTI-OVERKILL:** Full enterprise patterns ONLY when truly needed for system-wide changes
+
 **Pre-Implementation Dual Validation (MANDATORY):**
 
-**Validation Source 1: Coding Style (JSON)**
-- **Verify naming conventions:** Check against `naming_conventions` from JSON
+**Validation Source 1: Coding Style (JSON) - ADAPTIVE INTENSITY**
+- **SIMPLE TASK:** Basic naming conventions only
   - Functions: snake_case
   - Classes: PascalCase
   - Variables: snake_case
   - Constants: UPPER_SNAKE_CASE
-- **Verify error handling:** Match `error_handling.approach` from JSON
-- **Verify testing framework:** Use `testing_strategy.testing_framework` from JSON
-- **Verify architectural patterns:** Follow `architectural_patterns` from JSON
+- **MEDIUM TASK:** Standard validation
+  - All naming conventions
+  - Basic error handling
+  - Standard testing framework
+- **COMPLEX TASK:** Full validation
+  - All naming conventions
+  - Full error handling approach
+  - Complete testing framework
+  - All architectural patterns
 
-**Validation Source 2: Guidelines**
-- **Verify implementation guidelines:** Check against feature specific guidelines
-- **Verify general requirements:** Check against guidelines in `docs/guidelines/`
-- **Verify verification steps:** Ensure all guidelines requirements are met
+**Validation Source 2: Guidelines - ADAPTIVE INTENSITY**
+- **SIMPLE TASK:** Essential guidelines only
+- **MEDIUM TASK:** Standard guidelines
+- **COMPLEX TASK:** Full guidelines compliance
 
 **Implementation:**
-- **Execute:** Commit instructions following BOTH JSON and guidelines
-- **Apply project philosophy:** Follow `overall_philosophy.primary_adjectives` from JSON
+- **Execute:** Commit instructions following ADAPTIVE INTENSITY protocol
+- **Apply project philosophy:** Match intensity to task complexity
 - **Enforce naming:** Apply exact naming conventions from JSON
 - **Monitor:** Real-time output and error detection
 - **Timeout:** Maximum 5 minutes per command
 - **Rollback:** Immediate rollback on failure
+- **ANTI-OVERKILL CHECK:** Before implementing, verify complexity matches task requirements
 
 **Violation Handling:**
 - If violation of JSON rules detected → **PROPOSE SOLUTION** to user
 - If violation of template rules detected → **PROPOSE SOLUTION** to user
 - If both satisfied → Proceed with commit
 
-### 3. Verification Phase (MANDATORY)
+### 3. Verification Phase (MANDATORY) - ADAPTIVE INTENSITY
 - **Apply guidelines from:**
   - `docs/guidelines/project_coding_style_analysis.json` (testing framework)
   - `docs/guidelines/` (general verification)
   - `docs/active/features/[feature-name]/` (specific feature verification)
 - **Run verification steps** specified in task commit
-- **Automated tests:** Execute with testing framework from JSON (e.g., pytest)
-- **Log inspection:** Verify logging matches `error_handling.logging` from JSON
+- **Automated tests:** Execute with ADAPTIVE INTENSITY testing:
+  - **SIMPLE TASK:** Unit tests only (5-8 test methods)
+  - **MEDIUM TASK:** Unit + integration tests
+  - **COMPLEX TASK:** Full testing suite (unit + integration + performance + security)
+- **Log inspection:** Verify logging matches ADAPTIVE INTENSITY:
+  - **SIMPLE TASK:** Essential logging only (errors + key operations)
+  - **MEDIUM TASK:** Structured logging for key operations
+  - **COMPLEX TASK:** Full structured logging with loguru
 - **Safety checks:** Validate system integrity
 
-### 4. Dual Compliance Validation Protocol (CRITICAL)
-**MANDATORY validation before ANY commit against BOTH sources:**
+### 4. Dual Compliance Validation Protocol (CRITICAL) - ADAPTIVE INTENSITY
+**MANDATORY validation before ANY commit against BOTH sources with ADAPTIVE INTENSITY:**
 
-**JSON Validation (project_coding_style_analysis.json):**
-1. **Naming Convention Check:**
+**JSON Validation (project_coding_style_analysis.json) - ADAPTIVE INTENSITY:**
+1. **Naming Convention Check (ALL TASKS):**
    - Functions match `naming_conventions.functions` (snake_case)
    - Classes match `naming_conventions.classes` (PascalCase)
    - Variables match `naming_conventions.variables` (snake_case)
    - Constants match `naming_conventions.constants` (UPPER_SNAKE_CASE)
 
-2. **Error Handling Check:**
-   - Approach matches `error_handling.approach`
-   - Patterns match `error_handling.patterns`
-   - Logging follows `error_handling.logging`
+2. **Error Handling Check - ADAPTIVE INTENSITY:**
+   - **SIMPLE TASK:** Basic error handling only
+   - **MEDIUM TASK:** Standard error handling approach
+   - **COMPLEX TASK:** Full error handling approach with all patterns
 
-3. **Testing Check:**
-   - Framework matches `testing_strategy.testing_framework`
-   - Coverage aligns with `testing_strategy.coverage`
+3. **Testing Check - ADAPTIVE INTENSITY:**
+   - **SIMPLE TASK:** Unit tests only (5-8 test methods)
+   - **MEDIUM TASK:** Unit + integration tests
+   - **COMPLEX TASK:** Full testing suite (unit + integration + performance + security)
 
-4. **Architectural Patterns Check:**
-   - Implementation follows `architectural_patterns.primary_patterns`
-   - Design adheres to `architectural_patterns.design_principles`
+4. **Architectural Patterns Check - ADAPTIVE INTENSITY:**
+   - **SIMPLE TASK:** Basic patterns only (no enterprise patterns required)
+   - **MEDIUM TASK:** Standard architectural patterns
+   - **COMPLEX TASK:** All architectural patterns (Repository, Dependency injection, Factory, etc.)
 
-**Guidelines Validation (docs/guidelines/ + `docs/active/features/[feature-name]/`):**
+**Guidelines Validation (docs/guidelines/ + `docs/active/features/[feature-name]/`) - ADAPTIVE INTENSITY:**
 5. **Implementation Guidelines Check:**
-   - Code follows user-selected template guidelines
-   - Feature requirements from `docs/guidelines/` are met
+   - **SIMPLE TASK:** Essential guidelines only
+   - **MEDIUM TASK:** Standard guidelines
+   - **COMPLEX TASK:** Full guidelines compliance
 
 6. **Verification Steps Check:**
-   - All template-specified verification steps completed
+   - **SIMPLE TASK:** Essential verification steps only
+   - **MEDIUM TASK:** Standard verification steps
+   - **COMPLEX TASK:** All template-specified verification steps completed
 
 **Violation Response:**
 - If JSON violation → **PROPOSE SOLUTION** with corrected code
@@ -302,7 +369,7 @@ Task is complete when:
 4. **Level 4:** Full rollback and user notification
 
 **Rollback Coordination:**
-- **Pre-execution backup:** `git tag backup-$(Get-Date -Format "yyyy-MM-dd-HH-mm")`
+- **Pre-execution backup:** `git tag backup-$(date +%Y%m%d-%H%M%S)`
 - **Incremental rollback:** Per-commit rollback capability
 - **Full system rollback:** Complete task rollback
 - **User approval:** Mandatory before any rollback
@@ -335,3 +402,80 @@ Task is complete when:
 - **User guidance** for resolution steps
 
 **Execute → Verify → User Approval → Commit → Proceed. Safety first, user authorization mandatory.**
+
+## Over-Engineering Prevention Protocol (CRITICAL)
+
+### Anti-Pattern Detection
+**MANDATORY:** Before any implementation, assess task complexity and apply appropriate intensity:
+
+**SIMPLE TASK INDICATORS:**
+- Single file changes (enum extension, basic toolkit)
+- 1-3 methods maximum
+- Basic functionality only
+- No enterprise patterns required
+
+**MEDIUM TASK INDICATORS:**
+- Multi-file changes
+- 4-8 methods
+- Feature additions
+- Standard patterns required
+
+**COMPLEX TASK INDICATORS:**
+- System-wide changes
+- New subsystems
+- 10+ methods
+- Full enterprise patterns required
+
+### Over-Engineering Prevention Rules
+1. **SIMPLE TASK:** NO enterprise patterns, NO comprehensive logging, NO extensive testing
+2. **MEDIUM TASK:** Standard patterns, moderate logging, standard testing
+3. **COMPLEX TASK:** Full enterprise patterns, comprehensive logging, extensive testing
+
+### Anti-Overkill Enforcement
+**CRITICAL:** Prevent overkill in all phases:
+
+**FORBIDDEN FOR SIMPLE TASKS:**
+- Repository pattern
+- Dependency injection containers
+- Factory patterns
+- Comprehensive logging frameworks
+- Extensive test suites
+- Enterprise architectural patterns
+- Complex error handling systems
+- Performance monitoring
+- Security scanning
+- Integration testing
+
+**ALLOWED FOR SIMPLE TASKS:**
+- Basic error handling (try/catch)
+- Simple logging (print statements or basic logger)
+- Unit tests (5-8 methods max)
+- Direct function calls
+- Simple data structures
+- Basic naming conventions
+
+### Violation Detection
+**STOP execution if:**
+- Simple task with enterprise patterns applied
+- Simple task with comprehensive logging
+- Simple task with extensive testing suite
+- Task complexity assessment incorrect
+- Over-engineering detected in any phase
+
+**CORRECTIVE ACTION:**
+- Re-assess task complexity
+- Apply appropriate intensity level
+- Reduce implementation to match complexity
+- Remove unnecessary enterprise patterns
+- Simplify logging and testing
+- Proceed with corrected approach
+
+### Overkill Prevention Checklist
+**Before ANY implementation, verify:**
+- [ ] Task complexity correctly assessed
+- [ ] No enterprise patterns for simple tasks
+- [ ] No comprehensive logging for simple tasks
+- [ ] No extensive testing for simple tasks
+- [ ] Implementation matches actual requirements
+- [ ] No unnecessary abstractions
+- [ ] No over-architected solutions
