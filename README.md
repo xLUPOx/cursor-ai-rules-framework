@@ -12,6 +12,7 @@ This framework enforces a rigorous workflow of reconnaissance, planning, safe ex
 
 ### Core Components
 - **GLOBAL-RULES.mdc** - Main operational doctrine and protocols
+- **commands/** - Workflow commands for standard development tasks (`request`, `refresh`, `retro`)
 - **workflow/** - Planning and execution rules for development tasks
 - **docs/** - Context-aware documentation system (corporate vs startup)
 - **estensions/** - Specialized rules for specific domains
@@ -34,15 +35,40 @@ This framework enforces a rigorous workflow of reconnaissance, planning, safe ex
 - Place the content in a project-specific `.cursor/rules/` directory
 - This will override global settings for specific projects
 
-### 2. Use the Operational Playbooks
+### 2. Use the Workflow Commands (Recommended)
 
-**These are chat prompts - copy and paste into chat to initiate tasks:**
+**Activate workflows using command references in chat:**
+
+| Command | Purpose | How to Use |
+|---------|---------|------------|
+| **`@commands/request`** | Standard Operating Procedure | Reference in chat: `@commands/request` followed by your feature description |
+| **`@commands/refresh`** | Root Cause Analysis | Reference in chat: `@commands/refresh` followed by bug description |
+| **`@commands/retro`** | Self-Improvement Loop | Reference in chat: `@commands/retro` at end of session |
+| **`@commands/retro-integrate`** | Integrate Lessons into Doctrine | Reference in chat: `@commands/retro-integrate [lesson-id]` after reviewing log.md |
+
+**Example Usage:**
+```
+@commands/request Add user authentication system with JWT tokens. 
+Reason: Enable secure multi-user access to the application.
+```
+
+**Benefits:**
+- ✅ No copy/paste required - reference command directly
+- ✅ Automatic workflow activation
+- ✅ Consistent protocol application
+- ✅ Easy to maintain and update
+
+### 2b. Legacy Playbooks (Alternative)
+
+**Legacy templates available in `OLD/` directory - copy and paste into chat:**
 
 | Playbook | Purpose | How to Use |
 |----------|---------|------------|
-| **`02 - request.md`** | Standard Operating Procedure | Copy full content, replace placeholder with your goal, paste in chat |
-| **`03 - refresh.md`** | Root Cause Analysis | Use when bugs persist and simpler attempts failed |
-| **`04 - retro.md`** | Self-Improvement Loop | Use at end of session to capture learnings and improve the framework |
+| **`OLD/02 - request.md`** | Standard Operating Procedure | Copy full content, replace placeholder with your goal, paste in chat |
+| **`OLD/03 - refresh.md`** | Root Cause Analysis | Use when bugs persist and simpler attempts failed |
+| **`OLD/04 - retro.md`** | Self-Improvement Loop | Use at end of session to capture learnings and improve the framework |
+
+**Note:** Commands (`@commands/request`, `@commands/refresh`, `@commands/retro`) are recommended over legacy playbooks for better UX and maintainability.
 
 ### 3. Apply Optional Directives
 
@@ -58,6 +84,10 @@ This framework enforces a rigorous workflow of reconnaissance, planning, safe ex
 ### Core Files
 
 - **`GLOBAL-RULES.mdc`** - Main framework documentation and operational doctrine
+- **`commands/request.mdc`** - Standard development workflow command
+- **`commands/refresh.mdc`** - Root cause analysis workflow command
+- **`commands/retro.mdc`** - Retrospective and doctrine evolution command
+- **`commands/retro-integrate.mdc`** - Semi-automatic doctrine integration protocol
 - **`workflow/plan.md`** - Planning phase protocols
 - **`workflow/execute.md`** - Execution phase protocols
 
@@ -127,9 +157,14 @@ This framework enforces a rigorous workflow of reconnaissance, planning, safe ex
    - Workspace left clean
 
 4. **Continuous Improvement:**
-   - Framework includes built-in self-improvement protocols
-   - Agent analyzes session and proposes Doctrine updates
-   - Continuous learning and evolution
+   - Framework includes built-in self-improvement protocols via `/retro` command
+   - **Doctrine Evolution Process:**
+     1. Use `/retro` at end of session → AI analyzes and extracts lessons
+     2. Lessons saved to `docs/doctrine-evolution/log.md` with status `[PENDING REVIEW]`
+     3. Review lessons in log.md
+     4. Integrate via `/retro-integrate` command (semi-automatic) or manual edit
+     5. AI proposes exact diff → User approves → Integration applied
+   - **Why Semi-Automatic?** GLOBAL-RULES.mdc is complex (575+ lines, 51 sections). Manual review prevents style inconsistencies, logical conflicts, and unintended side effects.
 
 ## 🎯 Status Markers
 
@@ -193,4 +228,4 @@ This framework is provided as-is for educational and professional use. Please re
 
 **Welcome to a more disciplined, reliable, and truly autonomous way of working with AI.**
 
-*Updated: 2025-10-14*
+*Updated: 2025-11-05*

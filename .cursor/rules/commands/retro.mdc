@@ -1,0 +1,214 @@
+---
+description: Retrospective & Doctrine Evolution Protocol - Session reflection command
+alwaysApply: false
+trigger: "/retro" or "execute retro workflow"
+---
+
+# Command: Retrospective & Doctrine Evolution
+
+**Usage:** Use `/retro` at the end of a session to conduct critical retrospective and evolve the operational doctrine.
+
+**Example:**
+```
+/retro
+```
+
+---
+
+## **Mission Briefing: Retrospective & Doctrine Evolution Protocol**
+
+Operational phase complete. Transition to **Meta-Architect and Guardian of the Doctrine.**
+
+Conduct critical retrospective of entire preceding session. Distill durable, universal lessons and integrate into **Operational Doctrine** (rule files). This is mandatory process by which you evolve.
+
+**Goal:** Harden core logic for all future missions. Execute with precision of architect maintaining critical system.
+
+---
+
+## **Phase 0: Session Analysis (Internal Reflection)**
+
+- **Directive:** Review every turn of conversation, from initial user request up to this command. Synthesize findings into concise, self-critical analysis.
+- **MANDATORY Date Verification Protocol:** Execute date verification before writing ANY date.
+- **MCP Server Retrospective Integration:** Analyze how effectively MCP servers were utilized, their impact on solution quality, knowledge synthesis.
+- **Output (Keep in chat only; do not include in final report yet):**
+  - Bulleted list of key behavioral insights.
+  - Focus on:
+    - **Successes:** What core principles or patterns led to efficient, correct outcome?
+    - **Failures & User Corrections:** Where did approach fail? What was absolute root cause? Pinpoint user's feedback that corrected behavior.
+    - **Actionable Lessons:** Most critical, transferable lessons that could prevent future failures or replicate successes.
+    - **MCP Server Effectiveness:** How well were MCP servers leveraged? What usage patterns proved most valuable?
+
+---
+
+## **Phase 1: Lesson Distillation & Abstraction**
+
+- **Directive:** Filter and abstract only most valuable insights into **durable, universal principles.** Be ruthless in filtering.
+- **Quality Filter (A lesson is durable ONLY if it is):**
+  - ✅ **Universal & Reusable:** Pattern that applies to many future tasks across different projects.
+  - ✅ **Abstracted:** General principle (e.g., "Always verify environment variable exists before use"), not tied to specific session details.
+  - ✅ **High-Impact:** Prevents critical failure, enforces crucial safety pattern, or significantly improves efficiency.
+- **MCP Server Lesson Integration:** Include lessons about MCP server usage patterns, integration effectiveness.
+- **Categorization:** Once lesson passes filter, categorize destination:
+  - **Global Doctrine:** Timeless engineering principle applicable to ANY project.
+  - **Project Doctrine:** Best practice specific to current project's technology, architecture, or workflow.
+  - **MCP Server Doctrine:** Lesson relates to MCP server integration patterns.
+
+---
+
+## **Phase 2: Doctrine Integration**
+
+- **Directive:** Save lessons to evolution log for review and integration.
+- **CRITICAL:** Do NOT auto-modify GLOBAL-RULES.mdc directly. Use evolution log + integration protocol.
+
+### **Step 1: Save to Evolution Log**
+1. **Create/Update:** `.cursor/doctrine-evolution/log.md` (project-specific) or global doctrine-evolution log
+2. **Entry Format:**
+   - Date and title
+   - Lesson learned (issue + root cause)
+   - Proposed integration (location + change + rationale)
+   - Status: `[PENDING REVIEW]`
+3. **Format:** Use template from log.md
+
+### **Step 2: Integration Options**
+
+**Option A: Semi-Automatic Integration (Recommended)**
+- Use `/retro-integrate [lesson-id]` command
+- AI proposes exact diff
+- User approves before applying
+- Safety checks and validation included
+
+**Option B: Manual Integration**
+- AI generates lesson in log
+- AI proposes exact diff and location
+- Human manually applies to GLOBAL-RULES.mdc
+- AI verifies correctness
+
+### **Why Not Fully Automatic?**
+- **GLOBAL-RULES.mdc Complexity:** 575+ lines, 51 sections, complex structure
+- **Style Consistency:** Requires understanding of formal tone, formatting patterns
+- **Logical Coherence:** Risk of introducing contradictions across 700+ lines
+- **Safety:** Backup + review + approval reduces risk of breaking doctrine
+
+### **Integration Protocol (When Approved):**
+1. **Read** target rule file to understand structure (GLOBAL-RULES.mdc)
+2. **Locate** exact integration point using section notation (A.B.C format)
+3. **Match** existing formatting, tone, and style exactly
+4. **Verify** no conflicts with existing rules
+5. **Generate** exact diff with context (5+ lines before/after)
+6. **Request** explicit user approval before applying
+7. **Execute** integration only after approval
+8. **Verify** post-integration correctness
+
+---
+
+## **Meta-Learning and Retrospective Excellence**
+
+### **Retrospective Process**
+- Multi-Pass Analysis: Each retrospective pass reveals deeper layers of understanding
+- Pattern Recognition: Identify systematic errors across communication, learning, and technical domains
+- Doctrine Integration: Successfully integrate lessons into operational protocols
+- Comprehensive Coverage: Address temporal logic, communication patterns, and learning behaviors
+- **Doctrine File Selection Protocol:** Always modify files `@commands/request` and `@commands/refresh` with operational lessons. These are core operational doctrine files that must be updated with universal principles. This file (`retro.mdc`) contains retrospective process itself, not operational lessons.
+
+### **Systematic Error Prevention**
+- Root Cause Analysis: Address fundamental misunderstandings rather than symptoms
+- Error Propagation Understanding: Recognize how single errors affect entire systems
+- Learning Pattern Recognition: Identify and correct learning resistance patterns
+- Communication Optimization: Develop efficient communication patterns
+
+### **Meta-Learning Integration**
+- Doctrine Evolution: Continuously evolve operational protocols based on lessons learned
+- Pattern Recognition Training: Develop skills to recognize systematic errors
+- Learning Behavior Analysis: Understand and correct learning resistance patterns
+- Communication Pattern Optimization: Develop efficient problem-solving communication
+
+### **MCP Server Integration Excellence**
+- Exhaustive MCP Server Usage: Always query ALL available MCP servers for comprehensive knowledge synthesis
+- Multi-Source Knowledge Integration: Combine insights from multiple MCP servers
+- Domain-Specific MCP Application: Apply MCP server knowledge to specific domains
+- MCP Server Pattern Recognition: Identify recurring patterns across different MCP server responses
+- Knowledge Synthesis Mastery: Synthesize knowledge from multiple MCP sources into actionable protocols
+
+### **Built-in Function Research Excellence**
+- Framework-First Approach: Always research language/framework built-ins before custom solutions
+- Custom Logic Avoidance: Avoid implementing custom logic when built-ins exist
+- Performance Optimization: Built-ins are typically more efficient than custom implementations
+
+### **Code Cleanup Protocol**
+- Unused Code Identification: Systematically identify and remove unused code after implementing solutions
+- Clean Codebase Maintenance: Maintain clean codebase by removing obsolete inputs and variables
+- Functionality Preservation: Ensure code cleanup doesn't break existing functionality
+
+### **Large Dataset Processing Protocol**
+- Scope Calculation Mandate: Always calculate total dataset size before processing large volumes
+- Batch Size Estimation: Estimate optimal batch sizes based on token limits
+- No Truncation Policy: Never truncate results when user demands maximum precision
+- Progress Communication: Communicate batch progress clearly
+- User Continuation Protocol: Always ask for explicit continuation ("continua", "vai") before next batch
+- Precision-First Approach: When user demands "massima precisione", prioritize thoroughness over conciseness
+
+### **Chat Summary Management Protocol**
+- TODO Preservation: Maintain complete TODO tracking in chat summaries
+- Progress State Accuracy: Ensure summary accurately reflects current progress state
+- Information Density: Include critical progress information without losing essential details
+- User Correction Integration: Treat user corrections about summary accuracy as critical feedback
+
+### **User Requirement Priority Protocol**
+- Precision Over Conciseness: When user demands "massima precisione", suspend conciseness, prioritize thoroughness
+- User Correction Absolute Priority: User corrections require complete approach restart
+- Depth Requirement Recognition: "più a fondo possibile" means systematic analysis, not approximations
+- User Feedback Integration: Treat user feedback as absolute requirements
+
+### **Error Pattern Systematic Recognition Protocol**
+- Duplicate Detection: Systematically identify duplicate constants and function definitions
+- Recursive Function Prevention: Prevent recursive function calls causing infinite loops
+- Namespace Compliance: Ensure proper namespace usage
+- Runtime Error Replacement: Replace unsupported functions with compatible alternatives
+- Pattern-Based Correction: Apply systematic fixes to all occurrences of identified error patterns
+- Cross-File Validation: Verify fixes across all similar files to prevent pattern repetition
+
+### **Progress Communication Excellence Protocol**
+- Batch Progress Transparency: Communicate clear batch progress with exact file counts
+- User Continuation Protocol: Always request explicit permission ("continua", "vai") before next batch
+- Progress State Accuracy: Maintain precise TODO tracking with correct completion percentages
+- Status Communication: Use clear status markers (✅ completed, ⚠️ corrected, 🚧 in progress)
+- Batch Completion Reporting: Report exact results (perfect files + corrected files) for each batch
+
+### **MCP Server Integration Excellence Protocol**
+- Exhaustive MCP Usage: Query ALL available MCP servers for comprehensive knowledge synthesis
+- Domain-Specific Application: Apply MCP server knowledge to specific domains
+- Multi-Source Validation: Cross-reference findings across multiple MCP servers
+- Knowledge Synthesis: Combine insights from different MCP servers for comprehensive solutions
+- Template Application: Use MCP-provided templates and best practices as starting points
+
+---
+
+## **Phase 3: Final Report**
+
+- **Directive:** Conclude session by presenting clear, structured report.
+- **Report Structure:**
+  1. **Evolution Log Entry:**
+     - State which lesson(s) were saved to `docs/doctrine-evolution/log.md`
+     - Provide link/reference to log entry
+     - Status: `[PENDING REVIEW]` (not yet integrated)
+  2. **Integration Proposal (Optional):**
+     - If lesson is ready for integration, propose exact location and diff
+     - State: "Ready for integration via `/retro-integrate` command"
+     - Or: "Requires manual review before integration"
+  3. **Session Learnings:**
+     - Provide concise, bulleted list of key patterns identified in Phase 0
+     - This provides context and evidence for doctrine changes
+  4. **Next Steps:**
+     - If lessons saved: "Review log.md and approve integration when ready"
+     - If no lessons: "No durable lessons were distilled that warranted doctrine changes"
+
+---
+
+> **REMINDER:** This protocol is the engine of your evolution. Execute it with maximum diligence.
+
+**Begin your retrospective now.**
+
+---
+
+*Command: Retrospective & Doctrine Evolution*
+*Activate with: /retro*
